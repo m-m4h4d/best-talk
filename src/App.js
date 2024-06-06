@@ -8,11 +8,21 @@ function App() {
     <div className="App">
       <nav>
         <Stack spacing={2} direction="row">
-          <Button variant="text" href='#'>Courses</Button>
-          <Button variant="text" href='#'>About</Button>
-          <Button variant="text" href='#'>Contact</Button>
-          <Button variant="text" href='#'>Login</Button>
-          <Button variant="contained">Sign Up</Button>
+          <Button onClick={() => {
+            alert('clicked');
+          }} variant="text" href='#'>Courses</Button>
+          <Button onClick={() => {
+            alert('clicked');
+          }} variant="text" href='#'>About</Button>
+          <Button onClick={() => {
+            alert('clicked');
+          }} variant="text" href='#'>Contact</Button>
+          <Button onClick={() => {
+            alert('clicked');
+          }} variant="text" href='#'>Login</Button>
+          <Button onClick={() => {
+            alert('clicked');
+          }} variant="contained">Sign Up</Button>
         </Stack>
       </nav>
       <header className="App-header">
