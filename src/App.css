@@ -1,65 +1,80 @@
 body {
-  width: 1977px;
-  height: 6359px;
-  top: -375px;
-  left: -664px;
-  gap: 0px;
-  opacity: 0px;
-
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: #ecf5fb;
+  background-color: white;
+  min-width: 1vw;
 }
 
 .App {
-  background-color: #ecf5fb;
+  width: 100%;
+  background: radial-gradient(75.49% 265.37% at 24.51% 40.67%, #F6FBFD 0%, #E9F4FB 100%);
+}
+
+.landing {
+  background: radial-gradient(75.49% 265.37% at 24.51% 40.67%, #F6FBFD 0%, #E9F4FB 100%);
 }
 
 nav {
-  width: Fixed (1920px);
-  height: (96px);
-  left: 29px;
-  padding: 20px 240px 20px 240px;
-  gap: 0px;
-  justify-content: space-between;
-  opacity: 0px;
-
+  position: relative;
+  display: flex;
+  padding: 5vh;
+  justify-content: space-around;
+  align-items: center;
 }
 
-
+nav img {
+  position: relative;
+  width: 250.75px;
+  height: 56px;
+}
 
 ul {
-  list-style-type: none;
-  align-items: end;
+  position: relative;
   display: flex;
-  justify-content: end;
-  align-items: end;
-}
-
-li {
-  margin: 10px;
+  gap: 30px;
 }
 
 header {
+  position: relative;
   display: flex;
   justify-content: space-around;
-  padding: 10px 0;
+  align-items: center;
 }
 
 .left {
-  justify-content: start;
+  position: relative;
+  width: 70vh;
+}
+
+h1 {
+  font-size: 6vh;
+  font-weight: 700;
+  line-height: 8vh;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+
+.empower {
+  color: #c31575;
+}
+
+.tutor {
+  color: #2196d4;
+}
+
+.left p {
+  font-size: 2vh;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  text-align: left;
 }
 
 .right {
-  width: 709px;
-  height: 483px;
-  margin-top: 270px;
-  margin-left: 1000px;
+  position: relative;
+  width: 70vh;
 }
 
 .right img {
-  width: 709px;
-  height: 483px;
+  position: relative;
+  width: 100%;
   border-radius: 32px;
 }
