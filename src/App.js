@@ -47,6 +47,14 @@ function App() {
             </div>
           </header>
         </div>
+        <div className='trial'>
+          <Button onClick={() => {
+            alert('clicked');
+          }} variant="contained" sx={{ borderRadius: 28 }} style={{ background: '#2196D4', textTransform: 'none' }} endIcon={<East />}>
+            Sign Up Now
+          </Button>
+        </div>
+        <footer></footer>
       </div>
     </body>
   );
