@@ -5,7 +5,7 @@ import a from './1.png';
 import b from './2.png';
 import c from './3.png';
 import d from './4.png';
-import { East } from '@mui/icons-material';
+import { East, Facebook, Instagram, GitHub, Telegram, YouTube, Twitter } from '@mui/icons-material';
 import './App.css';
 import Button from '@mui/material/Button';
 
@@ -63,23 +63,51 @@ function App() {
           <div className='grid'>
             <div className='card'>
               <img src={a} alt='a' />
-              <p><b>Certified Teachers</b></p>
-              <p>I am text block. Click edit button to change this text. Lorem ipsum dolor</p>
+              <span>
+                <p><b>Certified Teachers</b></p>
+                <p>I am text block. Click edit button to change this text. Lorem ipsum dolor</p>
+                <Button onClick={() => {
+                  alert('clicked');
+                }} variant="text" style={{ textTransform: 'none', textDecoration: 'underline' }} sx={{ borderRadius: 28 }}>
+                  Learn More
+                </Button>
+              </span>
             </div>
             <div className='card'>
               <img src={b} alt='b' />
-              <p><b>Online Courses</b></p>
-              <p>I am text block. Click edit button to change this text. Lorem ipsum dolor</p>
+              <span>
+                <p><b>Online Courses</b></p>
+                <p>I am text block. Click edit button to change this text. Lorem ipsum dolor</p>
+                <Button onClick={() => {
+                  alert('clicked');
+                }} variant="text" style={{ textTransform: 'none', textDecoration: 'underline' }} sx={{ borderRadius: 28 }}>
+                  Learn More
+                </Button>
+              </span>
             </div>
             <div className='card'>
               <img src={c} alt='c' />
-              <p><b>Certification</b></p>
-              <p>I am text block. Click edit button to change this text. Lorem ipsum dolor</p>
+              <span>
+                <p><b>Certification</b></p>
+                <p>I am text block. Click edit button to change this text. Lorem ipsum dolor</p>
+                <Button onClick={() => {
+                  alert('clicked');
+                }} variant="text" style={{ textTransform: 'none', textDecoration: 'underline' }} sx={{ borderRadius: 28 }}>
+                  Learn More
+                </Button>
+              </span>
             </div>
             <div className='card'>
               <img src={d} alt='d' />
-              <p><b>1-to-1 learning</b></p>
-              <p>I am text block. Click edit button to change this text. Lorem ipsum dolor</p>
+              <span>
+                <p><b>1-to-1 learning</b></p>
+                <p>I am text block. Click edit button to change this text. Lorem ipsum dolor</p>
+                <Button onClick={() => {
+                  alert('clicked');
+                }} variant="text" style={{ textTransform: 'none', textDecoration: 'underline' }} sx={{ borderRadius: 28 }}>
+                  Learn More
+                </Button>
+              </span>
             </div>
           </div>
         </div>
@@ -109,7 +137,39 @@ function App() {
         </div>
 
         {/* Page 7 */}
-        <footer></footer>
+        <footer>
+          <div className='left' aria-colspan={1}>
+            <img src={logo} alt='logo' />
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div className='mid-left'>
+            <h3>Courses</h3>
+            <ul>
+              <li>Course 1</li>
+              <li>Course 2</li>
+              <li>Course 3</li>
+              <li>Course 4</li>
+            </ul>
+          </div>
+          <div className='mid-right'>
+          <h3>Company</h3>
+            <ul>
+              <li>About Us</li>
+              <li>Contact Us</li>
+            </ul>
+          </div>
+          <div className='right' aria-colspan={1}>
+            <span><b>Follow us</b></span>
+            <ul>
+              <li><Facebook /></li>
+              <li><Instagram /></li>
+              <li><GitHub /></li>
+              <li><Telegram /></li>
+              <li><YouTube /></li>
+              <li><Twitter /></li>
+            </ul>
+          </div>
+        </footer>
       </div>
     </div>
   );
