@@ -1,11 +1,12 @@
 import * as React from 'react';
 import image from './image.png';
-import logo from './logo.png';
 import a from './1.png';
 import b from './2.png';
 import c from './3.png';
 import d from './4.png';
-import { East, Facebook, Instagram, GitHub, Telegram, YouTube, Twitter } from '@mui/icons-material';
+import Navbar from './component/navbar';
+import Footer from './component/footer';
+import { East } from '@mui/icons-material';
 import './App.css';
 import Button from '@mui/material/Button';
 
@@ -19,28 +20,7 @@ function App() {
         {/* Landing Page */}
         <div className='landing'>
           {/* Group 2 */}
-          <nav>
-            <img src={logo} alt='logo' />
-            <ul>
-              <div className='buttons'>
-                <Button onClick={() => {
-                  alert('clicked');
-                }} variant="text" style={{ color: 'black', textTransform: 'none' }} sx={{ borderRadius: 28 }}>Courses</Button>
-                <Button onClick={() => {
-                  alert('clicked');
-                }} variant="text" style={{ color: 'black', textTransform: 'none' }} sx={{ borderRadius: 28 }}>About</Button>
-                <Button onClick={() => {
-                  alert('clicked');
-                }} variant="text" style={{ color: 'black', textTransform: 'none' }} sx={{ borderRadius: 28 }}>Contact</Button>
-                <Button onClick={() => {
-                  alert('clicked');
-                }} variant="text" style={{ color: 'black', textTransform: 'none' }} sx={{ borderRadius: 28 }}>Login</Button>
-                <Button onClick={() => {
-                  alert('clicked');
-                }} variant="contained" style={{ background: '#2196D4', textTransform: 'none' }} sx={{ borderRadius: 28 }}>Sign Up</Button>
-              </div>
-            </ul>
-          </nav>
+          <Navbar/>
           <header>
             <div className='left'>
               <h1><span className='empower'>Empower</span> your<br></br>learning journey<br></br>with the <span className='tutor'>best tutors.</span></h1>
@@ -55,6 +35,13 @@ function App() {
               <img src={image} alt='landing' />
             </div>
           </header>
+        </div>
+
+        {/* Page 2 */}
+        <div className='learning'>
+          {/* Group 5 */}
+          
+          <h1><span className='empower'>Learn</span> anything you want</h1>
         </div>
 
         {/* Page 3 */}
@@ -137,39 +124,7 @@ function App() {
         </div>
 
         {/* Page 7 */}
-        <footer>
-          <div className='left' aria-colspan={1}>
-            <img src={logo} alt='logo' />
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </div>
-          <div className='mid-left'>
-            <h3>Courses</h3>
-            <ul>
-              <li>Course 1</li>
-              <li>Course 2</li>
-              <li>Course 3</li>
-              <li>Course 4</li>
-            </ul>
-          </div>
-          <div className='mid-right'>
-          <h3>Company</h3>
-            <ul>
-              <li>About Us</li>
-              <li>Contact Us</li>
-            </ul>
-          </div>
-          <div className='right' aria-colspan={1}>
-            <span><b>Follow us</b></span>
-            <ul>
-              <li><Facebook /></li>
-              <li><Instagram /></li>
-              <li><GitHub /></li>
-              <li><Telegram /></li>
-              <li><YouTube /></li>
-              <li><Twitter /></li>
-            </ul>
-          </div>
-        </footer>
+        <Footer/>
       </div>
     </div>
   );
