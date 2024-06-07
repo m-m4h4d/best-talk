@@ -1,10 +1,12 @@
-body {
+.body {
   min-width: 1vw;
+  margin: 0;
+  padding: 0;
 }
 
 .App {
   width: 100%;
-  background-color: white;
+  background: #FFFFFF;
 }
 
 .landing {
@@ -86,6 +88,14 @@ h1 {
   align-content: center;
   height: 12vw;
   background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.1) 0%, rgba(217, 115, 171, 0.1) 100%);
+}
+
+.boost {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  height: 12vw;
+  background: #FFFFFF;
 }
 
 footer {

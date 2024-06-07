@@ -7,7 +7,7 @@ import Button from '@mui/material/Button';
 
 function App() {
   return (
-    <body>
+    <div className='body'>
       <div className="App">
         <div className='landing'>
           <nav>
@@ -32,6 +32,7 @@ function App() {
               </div>
             </ul>
           </nav>
+
           <header>
             <div className='left'>
               <h1><span className='empower'>Empower</span> your<br></br>learning journey<br></br>with the <span className='tutor'>best tutors.</span></h1>
@@ -47,6 +48,8 @@ function App() {
             </div>
           </header>
         </div>
+
+
         <div className='trial'>
           <Button onClick={() => {
             alert('clicked');
@@ -54,9 +57,17 @@ function App() {
             Sign Up Now
           </Button>
         </div>
+
+
+        <div className='boost'>
+          <h1>Want to <span className='empower'>boost</span> your <span className='tutor'>tutoring</span> career?</h1>
+          <p>We got you covered! Earn money by sharing your expert knowledge with<br></br>students. We provide one-stop destination to explore online tutoring<br></br>vacancies just sitting at your home.</p>
+        </div>
+
+
         <footer></footer>
       </div>
-    </body>
+    </div>
   );
 }
 
