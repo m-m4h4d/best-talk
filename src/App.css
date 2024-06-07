@@ -82,12 +82,18 @@ h1 {
   border-radius: 32px;
 }
 
+.choose {
+  background: radial-gradient(75.49% 265.37% at 24.51% 40.67%, #F6FBFD 0%, #E9F4FB 100%);
+}
+
 .trial {
-  display: grid;
+  padding: 2vh;
+  margin-top: 20vh;
+  position: relative;
   justify-content: center;
   align-items: center;
-  align-content: center;
-  height: 12vw;
+  text-align: center;
+  padding-bottom: 5vh;
   background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.1) 0%, rgba(217, 115, 171, 0.1) 100%);
 }
 
@@ -102,7 +108,7 @@ h1 {
 }
 
 .boost .grid {
-  min-width: 150vh;
+  width: 150vh;
   justify-content: center;
   align-items: center;
   min-height: 20vw;
