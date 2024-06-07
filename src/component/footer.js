@@ -1,6 +1,7 @@
 import React from 'react';
 import { Facebook, Instagram, GitHub, Telegram, YouTube, Twitter } from '@mui/icons-material';
 import logo from '../logo.png';
+import './footer.css';
 
 const Footer = () => {
     return (
