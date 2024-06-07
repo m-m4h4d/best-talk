@@ -9,6 +9,8 @@ function App() {
   return (
     <div className='body'>
       <div className="App">
+
+        
         <div className='landing'>
           <nav>
             <img src={logo} alt='logo' />
@@ -60,8 +62,15 @@ function App() {
 
 
         <div className='boost'>
-          <h1>Want to <span className='empower'>boost</span> your <span className='tutor'>tutoring</span> career?</h1>
-          <p>We got you covered! Earn money by sharing your expert knowledge with<br></br>students. We provide one-stop destination to explore online tutoring<br></br>vacancies just sitting at your home.</p>
+          <div className='grid'>
+            <h1>Want to <span className='empower'>boost</span> your <span className='tutor'>tutoring</span> career?</h1>
+            <p>We got you covered! Earn money by sharing your expert knowledge with<br></br>students. We provide one-stop destination to explore online tutoring<br></br>vacancies just sitting at your home.</p>
+            <Button onClick={() => {
+              alert('clicked');
+            }} variant="contained" sx={{ borderRadius: 28 }} style={{ background: '#c31575', textTransform: 'none' }} endIcon={<East />}>
+              Become a Tutor
+            </Button>
+          </div>
         </div>
 
 

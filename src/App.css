@@ -6,7 +6,7 @@
 
 .App {
   width: 100%;
-  background: #FFFFFF;
+  background: #fbfbfb;
 }
 
 .landing {
@@ -83,6 +83,7 @@ h1 {
 }
 
 .trial {
+  display: grid;
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -91,11 +92,22 @@ h1 {
 }
 
 .boost {
-  display: block;
-  align-items: center;
+  display: grid;
+  position: relative;
+  text-align: center;
   justify-content: center;
-  height: 12vw;
-  background: #FFFFFF;
+  align-items: center;
+  min-height: 22vw;
+  padding: 15vw;
+}
+
+.boost .grid {
+  min-width: 150vh;
+  justify-content: center;
+  align-items: center;
+  min-height: 20vw;
+  background: #ffffff;
+  gap: 1vw;
 }
 
 footer {
