@@ -1,6 +1,10 @@
 import * as React from 'react';
 import image from './image.png';
 import logo from './logo.png';
+import a from './1.png';
+import b from './2.png';
+import c from './3.png';
+import d from './4.png';
 import { East } from '@mui/icons-material';
 import './App.css';
 import Button from '@mui/material/Button';
@@ -58,20 +62,24 @@ function App() {
           <h1>Why <span className='empower'>choose us</span>?</h1>
           <div className='grid'>
             <div className='card'>
+              <img src={a} alt='a' />
               <p><b>Certified Teachers</b></p>
-              <p>Our tutors are experts in their field and have a passion for teaching.</p>
+              <p>I am text block. Click edit button to change this text. Lorem ipsum dolor</p>
             </div>
             <div className='card'>
+              <img src={b} alt='b' />
               <p><b>Online Courses</b></p>
-              <p>Our tutors tailor their lessons to meet your individual needs.</p>
+              <p>I am text block. Click edit button to change this text. Lorem ipsum dolor</p>
             </div>
             <div className='card'>
+              <img src={c} alt='c' />
               <p><b>Certification</b></p>
-              <p>Our online platform allows you to learn from anywhere, at any time.</p>
+              <p>I am text block. Click edit button to change this text. Lorem ipsum dolor</p>
             </div>
             <div className='card'>
+              <img src={d} alt='d' />
               <p><b>1-to-1 learning</b></p>
-              <p>Our online platform allows you to learn from anywhere, at any time.</p>
+              <p>I am text block. Click edit button to change this text. Lorem ipsum dolor</p>
             </div>
           </div>
         </div>

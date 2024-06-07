@@ -96,12 +96,18 @@ h1 {
 .choose .grid {
   background: #f7f7f7;
   padding: 1vh;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .choose .grid .card {
   background: #ffffff;
+  border-radius: 30px;
+}
+
+.choose .grid .card img {
+  width: 50%;
 }
 
 .trial {
