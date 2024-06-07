@@ -56,6 +56,24 @@ function App() {
         {/* Page 3 */}
         <div className='choose'>
           <h1>Why <span className='empower'>choose us</span>?</h1>
+          <div className='grid'>
+            <div className='card'>
+              <p><b>Certified Teachers</b></p>
+              <p>Our tutors are experts in their field and have a passion for teaching.</p>
+            </div>
+            <div className='card'>
+              <p><b>Online Courses</b></p>
+              <p>Our tutors tailor their lessons to meet your individual needs.</p>
+            </div>
+            <div className='card'>
+              <p><b>Certification</b></p>
+              <p>Our online platform allows you to learn from anywhere, at any time.</p>
+            </div>
+            <div className='card'>
+              <p><b>1-to-1 learning</b></p>
+              <p>Our online platform allows you to learn from anywhere, at any time.</p>
+            </div>
+          </div>
         </div>
 
         {/* Page 5 */}

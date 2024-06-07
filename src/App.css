@@ -83,7 +83,25 @@ h1 {
 }
 
 .choose {
+  margin-top: 10vh;
+  display: grid;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 5vh;
   background: radial-gradient(75.49% 265.37% at 24.51% 40.67%, #F6FBFD 0%, #E9F4FB 100%);
+}
+
+.choose .grid {
+  background: #f7f7f7;
+  padding: 1vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.choose .grid .card {
+  background: #ffffff;
 }
 
 .trial {
@@ -103,17 +121,14 @@ h1 {
   text-align: center;
   justify-content: center;
   align-items: center;
-  min-height: 22vw;
   padding: 15vw;
 }
 
 .boost .grid {
-  width: 150vh;
+  padding: 0 18vh 6vh 18vh;
   justify-content: center;
   align-items: center;
-  min-height: 20vw;
   background: #ffffff;
-  gap: 1vw;
 }
 
 footer {
