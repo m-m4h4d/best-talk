@@ -93,6 +93,7 @@ nav {
   border-radius: 12px;
 }
 
+/* Path: src/Components/Choose.js */
 .choose {
   margin-top: 20vh;
   display: grid;
@@ -130,6 +131,7 @@ nav {
   line-height: 3vh;
 }
 
+/* Path: src/Components/Trial.js */
 .trial {
   padding: 2vh;
   margin-top: 20vh;
@@ -141,6 +143,7 @@ nav {
   background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.1) 0%, rgba(217, 115, 171, 0.1) 100%);
 }
 
+/* Path: src/Components/Boost.js */
 .boost {
   display: grid;
   position: relative;
