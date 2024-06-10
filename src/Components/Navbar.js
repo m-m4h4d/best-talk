@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { AppBar, Toolbar, IconButton, Button, Grid, Drawer, List, ListItem, ListItemText, Typography } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../Images/logo.png';
-import './Navbar.css';
+import '../App.css';
 
 const Navbar = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);

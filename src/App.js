@@ -20,9 +20,10 @@ function App() {
                 {/* Landing Page */}
                 <Landing />
 
+                <Tabs />
+
                 {/* Page 2 */}
                 <div className='learning'>
-                    <Tabs />
                     <Container>
                         <Typography variant="h2" align="center">
                             <span className='pink'>Learn</span> anything you want

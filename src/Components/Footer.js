@@ -2,7 +2,7 @@ import React from 'react';
 import { Facebook, Instagram, GitHub, Telegram, YouTube, Twitter } from '@mui/icons-material';
 import logo from '../Images/logo.png';
 import { Grid, Typography, Box } from '@mui/material';
-import './Footer.css';
+import '../App.css';
 
 const Footer = () => {
     return (

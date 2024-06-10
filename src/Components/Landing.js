@@ -3,7 +3,7 @@ import { Button, Container, Grid, Typography } from '@mui/material';
 import { East } from '@mui/icons-material';
 import Navbar from './Navbar';
 import image from '../Images/image.png';
-import './Landing.css';
+import '../App.css';
 
 const Landing = () => {
     return (

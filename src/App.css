@@ -9,6 +9,62 @@
   background: #fbfbfb;
 }
 
+/* Path: src/Components/Navbar.js */
+nav {
+  padding-bottom: 8vh;
+}
+
+/* Path: src/Components/Landing.js */
+.landing {
+  background: radial-gradient(75.49% 265.37% at 24.51% 40.67%, #F6FBFD 0%, #E9F4FB 100%);
+  padding: 9vh 0;
+}
+
+.pink {
+  color: #c31575;
+}
+
+.blue {
+  color: #2196d4;
+}
+
+/* Path: src/Components/Tabs.js */
+.tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
+}
+
+.tab {
+  display: flex;
+  width: 58vh;
+  height: 12vh;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px 0px #00000026;
+  transition: ease-in-out 0.3s;
+}
+
+.tab:hover {
+  box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+.b1 {
+  background: #2196D433;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.b2 {
+  background: #C3157533;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
 .learning {
   margin: 15vh 0;
   display: flex;
@@ -82,4 +138,48 @@
   justify-content: center;
   align-items: center;
   background: #ffffff;
+}
+
+/* Path: src/Components/Footer.js */
+footer {
+  display: flex;
+  justify-content: space-around;
+  color: #ffffff;
+  background: #145C82;
+  padding: 5vh 0;
+}
+
+footer h3 {
+  margin-left: 7vh;
+}
+
+footer .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer .left img {
+  width: 250px;
+  height: 56px;
+}
+
+footer .mid-left {
+  align-items: center;
+}
+
+footer .mid-left ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+footer .mid-right {
+  align-items: center;
+}
+
+footer .mid-right ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
 }
