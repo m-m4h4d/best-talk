@@ -1,11 +1,11 @@
 import * as React from 'react';
-import image from './image.png';
-import a from './1.png';
-import b from './2.png';
-import c from './3.png';
-import d from './4.png';
-import Navbar from './component/navbar';
-import Footer from './component/footer';
+import image from './Images/image.png';
+import a from './Images/1.png';
+import b from './Images/2.png';
+import c from './Images/3.png';
+import d from './Images/4.png';
+import Navbar from './component/Navbar';
+import Footer from './component/Footer';
 import { East } from '@mui/icons-material';
 import './App.css';
 import { Button, Grid, Typography, Container } from '@mui/material';
