@@ -1,11 +1,10 @@
 import * as React from 'react';
-import image from './Images/image.png';
 import a from './Images/1.png';
 import b from './Images/2.png';
 import c from './Images/3.png';
 import d from './Images/4.png';
-import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
+import Landing from './Components/Landing';
 import { East } from '@mui/icons-material';
 import './App.css';
 import { Button, Grid, Typography, Container } from '@mui/material';
@@ -18,31 +17,7 @@ function App() {
             <div className="App">
 
                 {/* Landing Page */}
-                <div className='landing'>
-                    <Navbar />
-                    <Container>
-                        <Grid container spacing={2} alignItems="center">
-                            <Grid item xs={12} md={6}>
-                                <Typography variant="h2">
-                                    <span className='pink'>Empower</span> your<br />learning journey<br />with the <span className='blue'>best tutors.</span>
-                                </Typography>
-                                <Typography variant="body1" paragraph>
-                                    Our online tutors offer personalized, one-on-one learning to help you improve your grades, build your confidence, and achieve your academic goals.
-                                </Typography>
-                                <Button
-                                    onClick={() => alert('clicked')}
-                                    variant="contained"
-                                    sx={{ borderRadius: 28, background: '#2196D4', textTransform: 'none' }}
-                                    endIcon={<East />}>
-                                    Go with your tutor
-                                </Button>
-                            </Grid>
-                            <Grid item xs={12} md={6}>
-                                <img src={image} alt='landing' style={{ width: '100%', borderRadius: '30px' }} />
-                            </Grid>
-                        </Grid>
-                    </Container>
-                </div>
+                <Landing />
 
                 {/* Page 2 */}
                 <div className='learning'>

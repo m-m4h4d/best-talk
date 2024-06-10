@@ -9,23 +9,6 @@
   background: #fbfbfb;
 }
 
-.landing {
-  background: radial-gradient(75.49% 265.37% at 24.51% 40.67%, #F6FBFD 0%, #E9F4FB 100%);
-  padding: 8vh 0;
-}
-
-.pink {
-  color: #c31575;
-}
-
-.blue {
-  color: #2196d4;
-}
-
-.right {
-  position: relative;
-}
-
 .learning {
   text-align: center;
 }
