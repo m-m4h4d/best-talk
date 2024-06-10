@@ -27,19 +27,18 @@ function App() {
                                     <span className='pink'>Empower</span> your<br />learning journey<br />with the <span className='blue'>best tutors.</span>
                                 </Typography>
                                 <Typography variant="body1" paragraph>
-                                    Our online tutors offer personalized, one-on-one learning to help<br />you improve your grades, build your confidence, and achieve your<br />academic goals.
+                                    Our online tutors offer personalized, one-on-one learning to help you improve your grades, build your confidence, and achieve your academic goals.
                                 </Typography>
                                 <Button
                                     onClick={() => alert('clicked')}
                                     variant="contained"
                                     sx={{ borderRadius: 28, background: '#2196D4', textTransform: 'none' }}
-                                    endIcon={<East />}
-                                >
-                                    Go with your blue
+                                    endIcon={<East />}>
+                                    Go with your tutor
                                 </Button>
                             </Grid>
                             <Grid item xs={12} md={6}>
-                                <img src={image} alt='landing' style={{ width: '100%' }} />
+                                <img src={image} alt='landing' style={{ width: '100%', borderRadius: '30px' }} />
                             </Grid>
                         </Grid>
                     </Container>
@@ -60,11 +59,11 @@ function App() {
                         <Typography variant="h2" align="center">
                             Why <span className='pink'>choose us</span>?
                         </Typography>
-                        <Grid container spacing={4}>
+                        <Grid container spacing={6}>
                             {[{ img: a, title: "Certified Teachers" }, { img: b, title: "Online Courses" }, { img: c, title: "Certification" }, { img: d, title: "1-to-1 learning" }].map((item, index) => (
-                                <Grid item xs={12} md={3} key={index}>
+                                <Grid item xs={12} md={6} key={index}>
                                     <div className='card'>
-                                        <img src={item.img} alt={`card-${index}`} style={{ width: '100%' }} />
+                                        <img src={item.img} alt={`card-${index}`} style={{ borderRadius: '10px 0 0 10px' }} />
                                         <span>
                                             <Typography variant="h6" component="p"><b>{item.title}</b></Typography>
                                             <Typography variant="body2">I am text block. Click edit button to change this text. Lorem ipsum dolor</Typography>
@@ -109,31 +108,29 @@ function App() {
 
                 {/* Page 4 */}
                 <div className='boost'>
-                    <div className='overlay'>
-                        <Container>
-                            <Grid container alignItems="center" justifyContent="center">
-                                <Grid item xs={12}>
-                                    <Typography variant="h2" align="center">
-                                        Want to <span className='pink'>boost</span> your <span className='blue'>tutoring</span> career?
-                                    </Typography>
-                                    <Typography variant="body1" align="center" paragraph>
-                                        We got you covered! Earn money by sharing your expert knowledge with<br />students. We provide one-stop destination to explore online tutoring<br />vacancies just sitting at your home.
-                                    </Typography>
-                                    <Grid container justifyContent="center">
-                                        <Grid item>
-                                            <Button
-                                                onClick={() => alert('clicked')}
-                                                variant="contained"
-                                                sx={{ borderRadius: 28, background: '#c31575', textTransform: 'none' }}
-                                                endIcon={<East />}>
-                                                Become a Tutor
-                                            </Button>
-                                        </Grid>
+                    <Container className='overlay' background="#ffffff">
+                        <Grid container>
+                            <Grid item xs={12}>
+                                <Typography variant="h2" align="center">
+                                    Want to <span className='pink'>boost</span> your <span className='blue'>tutoring</span> career?
+                                </Typography>
+                                <Typography variant="body1" align="center" paragraph>
+                                    We got you covered! Earn money by sharing your expert knowledge with students. We provide one-stop destination to explore online tutoring vacancies just sitting at your home.
+                                </Typography>
+                                <Grid container justifyContent="center">
+                                    <Grid item>
+                                        <Button
+                                            onClick={() => alert('clicked')}
+                                            variant="contained"
+                                            sx={{ borderRadius: 28, background: '#c31575', textTransform: 'none' }}
+                                            endIcon={<East />}>
+                                            Become a Tutor
+                                        </Button>
                                     </Grid>
                                 </Grid>
                             </Grid>
-                        </Container>
-                    </div>
+                        </Grid>
+                    </Container>
                 </div>
 
                 {/* Page 7 */}

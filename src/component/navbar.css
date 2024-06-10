@@ -11,9 +11,3 @@ nav {
     width: 250.75px;
     height: 56px;
   }
-  
-  ul {
-    position: relative;
-    display: flex;
-    gap: 30px;
-  }

@@ -41,18 +41,3 @@ footer {
     flex-direction: column;
   }
   
-  footer .right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: right;
-  }
-  
-  footer .right ul {
-    list-style: none;
-  }
-  
-  footer .right span {
-    margin-right: 12vh;
-  }
-  

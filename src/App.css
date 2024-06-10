@@ -13,19 +13,6 @@
   background: radial-gradient(75.49% 265.37% at 24.51% 40.67%, #F6FBFD 0%, #E9F4FB 100%);
 }
 
-header {
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding-bottom: 2vw;
-  margin-bottom: 1vw;
-}
-
-.left {
-  position: relative;
-}
-
 .pink {
   color: #c31575;
 }
@@ -34,22 +21,8 @@ header {
   color: #2196d4;
 }
 
-.left p {
-  font-size: 2vh;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0.02em;
-  text-align: left;
-}
-
 .right {
   position: relative;
-}
-
-.right img {
-  position: relative;
-  width: 100%;
-  border-radius: 32px;
 }
 
 .learning {
@@ -74,7 +47,7 @@ header {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.choose .grid .card {
+.choose .card {
   height: 26vh;
   margin: 2vh;
   display: flex;
@@ -84,19 +57,13 @@ header {
   transition: ease-in-out 0.3s;
 }
 
-.choose .grid .card:hover {
+.choose .card:hover {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.choose .grid .card span {
+.choose .card span {
   margin-left: 2vh;
   line-height: 3vh;
-}
-
-.choose .grid .card img {
-  width: 26vh;
-  height: 26vh;
-  border-radius: 10px 0 0 10px;
 }
 
 .trial {
@@ -116,11 +83,13 @@ header {
   text-align: center;
   justify-content: center;
   align-items: center;
-  padding: 15vw;
+  padding: 10vw;
 }
 
 .boost .overlay {
-  padding: 0 18vh 6vh 18vh;
+  padding: 0 6vh 6vh 6vh;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: #ffffff;
