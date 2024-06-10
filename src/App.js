@@ -5,6 +5,7 @@ import c from './Images/3.png';
 import d from './Images/4.png';
 import Footer from './Components/Footer';
 import Landing from './Components/Landing';
+import Tabs from './Components/Tabs';
 import { East } from '@mui/icons-material';
 import './App.css';
 import { Button, Grid, Typography, Container } from '@mui/material';
@@ -21,6 +22,7 @@ function App() {
 
                 {/* Page 2 */}
                 <div className='learning'>
+                    <Tabs />
                     <Container>
                         <Typography variant="h2" align="center">
                             <span className='pink'>Learn</span> anything you want

@@ -1,23 +1,32 @@
 import React from 'react';
-import { Button, Typography } from '@mui/material';
+import { Button, Grid, Typography } from '@mui/material';
+import './Tabs.css';
+import { ArrowForward, HailRounded, SchoolOutlined } from '@mui/icons-material';
 
 const Tabs = () => {
     return (
-        <div>
-            {/* Your tab component code goes here */}
-            <img src={item.img} alt={`card-${index}`} style={{ borderRadius: '10px 0 0 10px' }} />
-            <span>
-                <Typography variant="h6" component="p"><b>{item.title}</b></Typography>
-                <Typography variant="body2">I am text block. Click edit button to change this text. Lorem ipsum dolor</Typography>
+        <Grid container spacing={6} item xs={12} md={6} justifyContent={'space-around'} alignItems={'center'}>
+            <div className='tab'>
+                <div className='b1'>
+                    <SchoolOutlined />
+                </div>
+                <Typography variant="h6" component="p">Become a Learner</Typography>
                 <Button
                     onClick={() => alert('clicked')}
-                    variant="text"
-                    sx={{ textTransform: 'none', textDecoration: 'underline', borderRadius: 28 }}
-                >
-                    Learn More
-                </Button>
-            </span>
-        </div>
+                    variant="contained"
+                    sx={{ borderRadius: 48, background: '#2196D4', textTransform: 'none' }}><ArrowForward /></Button>
+            </div>
+            <div className='tab'>
+                <div className='b2'>
+                    <HailRounded />
+                </div>
+                <Typography variant="h6" component="p">Become a Teacher</Typography>
+                <Button
+                    onClick={() => alert('clicked')}
+                    variant="contained"
+                    sx={{ borderRadius: 100, background: '#c31575', textTransform: 'none' }}><ArrowForward /></Button>
+            </div>
+        </Grid>
     );
 };
 
