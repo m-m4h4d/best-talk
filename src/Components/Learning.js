@@ -32,7 +32,7 @@ const Learning = () => {
                     {courses.map((course, index) => (
                         <Grid item xs={12} sm={6} md={4} lg={2.4} key={index}>
                             <Box className='learnBtn' textAlign="center">
-                                <img src={course.image} alt={course.label} width={'50%'} style={{ background: '#F1F2F6', padding: '1vh 8vh', borderRadius: '12px 12px 0 0' }} />
+                                <img src={course.image} alt={course.label} width={'50%'} style={{ background: '#F1F2F6', padding: '1vh 9vh', borderRadius: '12px 12px 0 0' }} />
                                 <Typography variant="h6" component="p"><b>{course.label}</b></Typography>
                             </Box>
                         </Grid>

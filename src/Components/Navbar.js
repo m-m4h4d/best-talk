@@ -35,8 +35,7 @@ const Navbar = () => {
                                             onClick={item.onClick}
                                             variant={item.variant || "text"}
                                             style={{ color: item.variant ? '#fff' : 'black', textTransform: 'none', background: item.variant ? item.color : 'none' }}
-                                            sx={{ borderRadius: 28 }}
-                                        >
+                                            sx={{ borderRadius: 28 }}>
                                             {item.text}
                                         </Button>
                                     </Grid>
