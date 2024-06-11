@@ -39,9 +39,6 @@ nav {
 
 .tab {
   display: flex;
-  width: 58vh;
-  height: 12vh;
-  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   border-radius: 10px;
@@ -55,13 +52,13 @@ nav {
 
 .b1 {
   background: #2196D433;
-  padding: 0.5rem;
+  padding: 0.6rem 1rem;
   border-radius: 6px;
 }
 
 .b2 {
   background: #C3157533;
-  padding: 0.5rem;
+  padding: 0.6rem 1rem;
   border-radius: 6px;
 }
 

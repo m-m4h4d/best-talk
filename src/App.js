@@ -13,7 +13,7 @@ function App() {
         <div className='body'>
             <div className="App">
                 <Landing />
-                <Tabs />
+                <Tabs size="md" />
                 <Learning />
                 <Choose />
                 <Trial />
