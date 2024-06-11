@@ -7,8 +7,8 @@ import '../App.css';
 const Footer = () => {
     return (
         <footer>
-            <Box sx={{ padding: '2rem 0' }}>
-                <Grid container spacing={4} justifyContent="center">
+            <Box sx={{ padding: '2rem 0 2rem 0' }}>
+                <Grid container spacing={6} justifyContent="space-around">
                     <Grid item xs={12} md={3} className='left'>
                         <img src={logo} alt='logo' style={{ height: '50px' }} />
                         <Typography variant="body1" paragraph>
