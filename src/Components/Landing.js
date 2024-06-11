@@ -9,7 +9,7 @@ const Landing = () => {
     return (
         <div className='landing'>
             <Navbar />
-            <Container>
+            <Container style={{ marginTop: '2rem' }}>
                 <Grid container spacing={2} alignItems="center">
                     <Grid item xs={12} md={6}>
                         <Typography variant="h2">

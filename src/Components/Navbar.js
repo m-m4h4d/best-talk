@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Button, Grid, Drawer, List, ListItem, ListItemText, Typography } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Button, Grid, Drawer, List, ListItem, ListItemText, Typography, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../Images/logo.png';
 import '../App.css';
+import Tabs from './Tabs';
 
 const Navbar = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const [signupDrawerOpen, setSignupDrawerOpen] = useState(false);
 
     const handleDrawerToggle = () => {
         setDrawerOpen(!drawerOpen);
+    };
+
+    const handleSignupDrawerToggle = () => {
+        setSignupDrawerOpen(!signupDrawerOpen);
     };
 
     const menuItems = [
@@ -16,14 +22,14 @@ const Navbar = () => {
         { text: 'About', onClick: () => alert('clicked') },
         { text: 'Contact', onClick: () => alert('clicked') },
         { text: 'Login', onClick: () => alert('clicked') },
-        { text: 'Sign Up', onClick: () => alert('clicked'), variant: 'contained', color: '#2196D4' }
+        { text: 'Sign Up', onClick: handleSignupDrawerToggle, variant: 'contained', color: '#2196D4' }
     ];
 
     return (
         <nav>
             <AppBar position="static" color="transparent" elevation={0}>
                 <Toolbar>
-                    <Grid container alignItems="center" justifyContent="space-between">
+                    <Grid container alignItems="center" justifyContent="space-around">
                         <Grid item>
                             <img src={logo} alt='logo' style={{ height: '50px' }} />
                         </Grid>
@@ -33,8 +39,8 @@ const Navbar = () => {
                                     <Grid item key={index}>
                                         <Button
                                             onClick={item.onClick}
-                                            variant={item.variant || "text"}
-                                            style={{ color: item.variant ? '#fff' : 'black', textTransform: 'none', background: item.variant ? item.color : 'none' }}
+                                            variant={item.variant ? item.variant : 'text'}
+                                            style={{ color: item.variant ? 'white' : 'black', textTransform: 'none', background: item.variant ? item.color : 'none' }}
                                             sx={{ borderRadius: 28 }}>
                                             {item.text}
                                         </Button>
@@ -61,6 +67,9 @@ const Navbar = () => {
                     </List>
                 </Drawer>
             </AppBar>
+            <Box sx={{ display: signupDrawerOpen ? 'flex' : 'none', justifyContent: 'flex-end', position: 'relative', paddingLeft: '6rem', alignItems: 'center' }}>
+                <Tabs size="sm" />
+            </Box>
         </nav>
     );
 };

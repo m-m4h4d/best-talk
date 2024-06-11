@@ -36,8 +36,8 @@ const Tabs = ({ size = 'md' }) => {
 
     return (
         <div className='tabs'>
-            <Grid container spacing={1} justifyContent='space-around' alignItems='center'>
-                <div className='tab' style={currentStyles.tab}>
+            <Grid container spacing={20} justifyContent='space-around' alignItems='center' style={{ marginRight: '10vh', marginLeft: '10vh' }}>
+                <div className='tab' style={{width: currentStyles.tab.width, height: currentStyles.tab.height, marginRight: '1rem', marginLeft: '1rem' }}>
                     <div className='b1' style={currentStyles.div}>
                         <SchoolOutlined />
                     </div>
@@ -51,7 +51,7 @@ const Tabs = ({ size = 'md' }) => {
                         <East />
                     </Fab>
                 </div>
-                <div className='tab' style={currentStyles.tab}>
+                <div className='tab' style={{width: currentStyles.tab.width, height: currentStyles.tab.height, marginLeft: '1rem', marginRight: '1rem' }}>
                     <div className='b2' style={currentStyles.div}>
                         <HailRounded />
                     </div>
