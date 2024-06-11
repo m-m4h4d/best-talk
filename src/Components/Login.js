@@ -10,7 +10,7 @@ function Login() {
                         Log in
                     </Typography>
                     <Typography variant="body1" align='center' textAlign='left'>
-                        Don't have an account? <a href="/login" style={{ textDecoration: 'none', color: 'black' }}>Sign up</a>
+                        Don't have an account? <a href="/signup" style={{ textDecoration: 'none', color: 'black' }}>Sign up</a>
                     </Typography>
                     <TextField fullWidth margin='normal' id='emailAddress' label='Email Address' size='small' style={{ background: '#E8EDF5', color: '#4A789C' }} />
                     <TextField fullWidth margin='normal' id='password' label='Password' type='password' size='small' style={{ background: '#E8EDF5', color: '#4A789C' }} />
