@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../Images/logo.png';
 import '../App.css';
 import Tabs from './Tabs';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
@@ -21,7 +22,7 @@ const Navbar = () => {
         { text: 'Courses', onClick: () => alert('clicked') },
         { text: 'About', onClick: () => alert('clicked') },
         { text: 'Contact', onClick: () => alert('clicked') },
-        { text: 'Login', onClick: () => alert('clicked') },
+        { text: 'Login', component: Link, to: '/login' },
         { text: 'Sign Up', onClick: handleSignupDrawerToggle, variant: 'contained', color: '#2196D4' }
     ];
 
@@ -39,6 +40,8 @@ const Navbar = () => {
                                     <Grid item key={index}>
                                         <Button
                                             onClick={item.onClick}
+                                            component={item.component ? item.component : 'button'}
+                                            to={item.to}
                                             variant={item.variant ? item.variant : 'text'}
                                             style={{ color: item.variant ? 'white' : 'black', textTransform: 'none', background: item.variant ? item.color : 'none' }}
                                             sx={{ borderRadius: 28 }}>
@@ -56,7 +59,7 @@ const Navbar = () => {
                 <Drawer anchor='right' open={drawerOpen} onClose={handleDrawerToggle}>
                     <List>
                         {menuItems.map((item, index) => (
-                            <ListItem button key={index} onClick={item.onClick}>
+                            <ListItem button key={index} onClick={item.onClick} component={item.component ? item.component : 'div'} to={item.to}>
                                 <ListItemText>
                                     <Typography variant="button" display="block">
                                         {item.text}

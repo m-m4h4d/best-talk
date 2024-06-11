@@ -1,26 +1,19 @@
 import * as React from 'react';
 import './App.css';
-import Learning from './Components/Learning';
-import Footer from './Components/Footer';
-import Landing from './Components/Landing';
-import Tabs from './Components/Tabs';
-import Choose from './Components/Choose';
-import Trial from './Components/Trial';
-import Boost from './Components/Boost';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Components/Home';
+import Signup from './Components/Signup';
+import Login from './Components/Login';
 
 function App() {
     return (
-        <div className='body'>
-            <div className="App">
-                <Landing />
-                <Tabs size="md" />
-                <Learning />
-                <Choose />
-                <Trial />
-                <Boost />
-                <Footer />
-            </div>
-        </div>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/login" element={<Login />} />
+            </Routes>
+        </Router>
     );
 }
 

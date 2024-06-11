@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid, Typography, Fab } from '@mui/material';
 import '../App.css';
 import { HailRounded, SchoolOutlined, East } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 const Tabs = ({ size = 'md' }) => {
     const sizeStyles = {
@@ -37,7 +38,7 @@ const Tabs = ({ size = 'md' }) => {
     return (
         <div className='tabs'>
             <Grid container spacing={20} justifyContent='space-around' alignItems='center' style={{ marginRight: '10vh', marginLeft: '10vh' }}>
-                <div className='tab' style={{width: currentStyles.tab.width, height: currentStyles.tab.height, marginRight: '1rem', marginLeft: '1rem' }}>
+                <div className='tab' style={{ width: currentStyles.tab.width, height: currentStyles.tab.height, marginRight: '1rem', marginLeft: '1rem' }}>
                     <div className='b1' style={currentStyles.div}>
                         <SchoolOutlined />
                     </div>
@@ -45,13 +46,13 @@ const Tabs = ({ size = 'md' }) => {
                         {getText('Become a Learner')}
                     </Typography>
                     <Fab
-                        onClick={() => alert('clicked')}
+                        component={Link} to="/signup"
                         variant="contained" size={currentStyles.fab.size}
                         sx={{ background: '#2196D4', color: '#ffffff', transition: 'ease-in-out 0.3s', '&:hover': { background: '#176ba0' } }}>
                         <East />
                     </Fab>
                 </div>
-                <div className='tab' style={{width: currentStyles.tab.width, height: currentStyles.tab.height, marginLeft: '1rem', marginRight: '1rem' }}>
+                <div className='tab' style={{ width: currentStyles.tab.width, height: currentStyles.tab.height, marginLeft: '1rem', marginRight: '1rem' }}>
                     <div className='b2' style={currentStyles.div}>
                         <HailRounded />
                     </div>
@@ -59,7 +60,7 @@ const Tabs = ({ size = 'md' }) => {
                         {getText('Become a Teacher')}
                     </Typography>
                     <Fab
-                        onClick={() => alert('clicked')}
+                        component={Link} to="/signup"
                         variant="contained" size={currentStyles.fab.size}
                         sx={{ background: '#c31575', color: '#ffffff', transition: 'ease-in-out 0.3s', '&:hover': { background: '#9a115e' } }}>
                         <East />
