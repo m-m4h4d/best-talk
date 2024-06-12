@@ -1,6 +1,6 @@
-# Learning Journey App
+# BestTalk - The Canadian Way
 
-Welcome to the Learning Journey App! This application empowers users' learning journeys with the best tutors. Our online tutors offer personalized, one-on-one learning to help you improve your grades, build your confidence, and achieve your academic goals.
+Welcome to Best Talk! This application empowers users' learning journeys with the best tutors. Our online tutors offer personalized, one-on-one learning to help you improve your grades, build your confidence, and achieve your academic goals.
 
 ## Table of Contents
 
@@ -36,13 +36,13 @@ To run this project locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/learning-journey-app.git
+   git clone https://github.com/m-m4h4d/best-talk.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd learning-journey-app
+   cd best-talk
    ```
 
 3. Install the dependencies:
@@ -103,11 +103,11 @@ Footer with company information, course links, and social media icons.
 
 ## Contributing
 
-We welcome contributions to improve the Learning Journey App! To contribute:
+We welcome contributions to improve the Best Talk App! To contribute:
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes and commit them (`git commit -m 'Add new feature'`).
+3. Make your changes and commit them (`git commit -a -m 'Add new feature'`).
 4. Push to the branch (`git push origin feature-branch`).
 5. Create a pull request.
 
@@ -117,7 +117,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-Thank you for using the Learning Journey App! We hope it helps you achieve your academic goals. For any questions or support, please contact us at <support@learningjourney.com>.
+Thank you for using the Learning Journey App! We hope it helps you achieve your academic goals. For any questions or support, please contact us at <support@besttalk.com>.
 
 ## Getting Started with Create React App
 
