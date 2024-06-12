@@ -3,11 +3,7 @@ import { Box, Button, Container, TextField, Typography, Link as MuiLink } from '
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 function Signup() {
-    const location = useLocation();
-    const category = location.state?.category || 'NULL';
-
     const [values, setValues] = React.useState({
-        category: category || '',
         firstName: '',
         lastName: '',
         email: '',
@@ -16,6 +12,8 @@ function Signup() {
     });
 
     const navigate = useNavigate();
+    const location = useLocation();
+    const category = location.state?.category || 'NULL';
 
     const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
@@ -41,9 +39,14 @@ function Signup() {
             return;
         }
 
-        const { confirmPassword, ...userData } = values;
-        console.log(JSON.stringify({category, ...userData}, null, 2));
-        navigate('/question');
+        const { confirmPassword, ...data } = values;
+        const userData = {category, ...data};
+
+        if (category === 'Learner') {
+            navigate('/question', { state: { userData } });
+        } else {
+            return;
+        }
     };
 
 

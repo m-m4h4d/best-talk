@@ -18,7 +18,7 @@ const Boost = () => {
                     <Grid item xs={12}>
                         <Typography variant="h2" align="center">
                             Want to <span className='pink'>boost</span> your 
-                            <span className='blue'>tutoring</span> career?
+                            <span className='blue'> tutoring</span> career?
                         </Typography>
                         <Typography variant="body1" align="center" paragraph>
                             We got you covered! Earn money by sharing your expert knowledge 

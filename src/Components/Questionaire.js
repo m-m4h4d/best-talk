@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import { CalculateOutlined, DeveloperModeRounded, Draw, ScreenshotMonitor, Translate } from '@mui/icons-material';
+import { useLocation } from 'react-router-dom';
 
 const Questionnaire = () => {
     const [selectedGoals, setSelectedGoals] = useState([]);
+    const location = useLocation();
+    const userData = location.state?.userData || {};
 
     const goals = [
         { image: <Translate />, label: "Foreign Language", color: '#C35B101A' },
@@ -21,6 +24,17 @@ const Questionnaire = () => {
                 return [...prevSelectedGoals, index];
             }
         });
+    };
+
+    const handleContinue = () => {
+        if (selectedGoals.length === 0) {
+            alert("Please select at least one goal.");
+            return;
+        }
+
+        const selectedGoalData = selectedGoals.map((goalIndex) => goals[goalIndex].label);
+        const updatedUserData = { ...userData, goals: selectedGoalData };
+        console.log(JSON.stringify(updatedUserData, null, 2));
     };
 
     return (
@@ -52,8 +66,7 @@ const Questionnaire = () => {
                                         boxShadow: '0px 4px 10px 0px #00000026',
                                         transition: 'ease-in-out 0.3s',
                                         '&:hover': { boxShadow: '0px 4px 10px 0px #00000099' }
-                                    }}
-                                >
+                                    }}>
                                     <div style={{ background: goal.color, borderRadius: '0.25rem', padding: '0.5rem', margin: '0 1rem 0 0' }}>
                                         {goal.image}
                                     </div>
@@ -62,7 +75,7 @@ const Questionnaire = () => {
                             </Grid>
                         ))}
                     </Grid>
-                    <Button onClick={() => alert('clicked')} variant='contained' style={{ borderRadius: '12px', margin: '2rem 2rem 0 2rem', background: '#2196D4' }}>Continue</Button>
+                    <Button onClick={() => handleContinue()} variant='contained' style={{ borderRadius: '12px', margin: '2rem 2rem 0 2rem', background: '#2196D4' }}>Continue</Button>
                 </Box>
             </Container>
         </div>

@@ -22,7 +22,7 @@ const Landing = () => {
                         <Typography variant="h2">
                             <span className='pink'>Empower</span> your<br />
                             learning journey<br />with the 
-                            <span className='blue'>best tutors.</span>
+                            <span className='blue'> best tutors.</span>
                         </Typography>
                         <Typography variant="body1" paragraph>
                             Our online tutors offer personalized, one-on-one learning to help 
