@@ -8,18 +8,40 @@ function Signup() {
         lastName: '',
         emailAddress: '',
         password: '',
+        confirmPassword: ''
     });
+
+    const navigate = useNavigate();
 
     const handleChange = (prop) => (event) => {
         setValues({ ...values, [prop]: event.target.value });
     };
 
-    const navigate = useNavigate();
-
     const handleSubmit = (event) => {
         event.preventDefault();
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#^@$!%*?&.,])[A-Za-z\d#^@$!%*?&.,]+$/;
+        const passwordLength = /^.{8,}$/;
+
+        if (!passwordLength.test(values.password)) {
+            alert("Password must be at least 8 characters long.");
+            return;
+        }
+
+        if (!passwordRegex.test(values.password)) {
+            alert("Password must contain at least one uppercase, one lowercase, one number, and one special character.");
+            return;
+        }
+
+        if (values.password !== values.confirmPassword) {
+            alert("Passwords do not match!");
+            return;
+        }
+
+        const { confirmPassword, ...userData } = values;
+        console.log(JSON.stringify(userData, null, 2));
         navigate('/question');
     };
+
 
     return (
         <div style={{ background: '#F7FAFC' }}>
@@ -30,7 +52,10 @@ function Signup() {
                     </Typography>
                     <Typography variant="body1" align='center' textAlign='left'>
                         Already have an account?&nbsp;
-                        <MuiLink component={Link} to='/login' style={{ textDecoration: 'none', color: 'black' }}>Log in</MuiLink>
+                        <MuiLink component={Link} to='/login'
+                            style={{ textDecoration: 'none', color: 'black' }}>
+                            Log in
+                        </MuiLink>
                     </Typography>
                     <form onSubmit={handleSubmit}>
                         <TextField
@@ -40,6 +65,8 @@ function Signup() {
                             id='firstName'
                             label='First Name'
                             size='small'
+                            value={values.firstName}
+                            onChange={handleChange('firstName')}
                             style={{ background: '#E8EDF5', color: '#4A789C' }}
                         />
                         <TextField
@@ -49,6 +76,8 @@ function Signup() {
                             id='lastName'
                             label='Last Name'
                             size='small'
+                            value={values.lastName}
+                            onChange={handleChange('lastName')}
                             style={{ background: '#E8EDF5', color: '#4A789C' }}
                         />
                         <TextField
@@ -59,6 +88,8 @@ function Signup() {
                             label='Email Address'
                             type='email'
                             size='small'
+                            value={values.emailAddress}
+                            onChange={handleChange('emailAddress')}
                             style={{ background: '#E8EDF5', color: '#4A789C' }}
                         />
                         <TextField
@@ -69,6 +100,8 @@ function Signup() {
                             label='Password'
                             type='password'
                             size='small'
+                            value={values.password}
+                            onChange={handleChange('password')}
                             style={{ background: '#E8EDF5', color: '#4A789C' }}
                         />
                         <TextField
@@ -79,17 +112,29 @@ function Signup() {
                             label='Confirm Password'
                             type='password'
                             size='small'
+                            value={values.confirmPassword}
+                            onChange={handleChange('confirmPassword')}
                             style={{ background: '#E8EDF5', color: '#4A789C' }}
                         />
                         <Button
                             type='submit'
                             variant='contained'
-                            style={{ borderRadius: '12px', margin: '1rem', background: '#2196D4' }}>
+                            style={{
+                                borderRadius: '12px',
+                                margin: '1rem',
+                                background: '#2196D4'
+                            }}>
                             Continue
                         </Button>
                     </form>
-                    <Typography variant="body2" align='center' textAlign='center' color='#4A789C' style={{ margin: '0.25rem' }}>
-                        By clicking on continue, you agree to our terms of service and privacy policy
+                    <Typography
+                        variant="body2"
+                        align='center'
+                        textAlign='center'
+                        color='#4A789C'
+                        style={{ margin: '0.25rem' }}>
+                        By clicking on continue,
+                        you agree to our terms of service and privacy policy
                     </Typography>
                 </Box>
             </Container>
