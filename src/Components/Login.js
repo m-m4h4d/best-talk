@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Box, Button, Container, TextField, Typography } from '@mui/material';
+import { Box, Button, Container, TextField, Typography, Link as MuiLink } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 function Login() {
     return (
@@ -10,11 +11,14 @@ function Login() {
                         Log in
                     </Typography>
                     <Typography variant="body1" align='center' textAlign='left'>
-                        Don't have an account? <a href="/signup" style={{ textDecoration: 'none', color: 'black' }}>Sign up</a>
+                        Don't have an account?&nbsp;
+                        <MuiLink component={Link} to='/signup' style={{ textDecoration: 'none', color: 'black' }}>Sign up</MuiLink>
                     </Typography>
-                    <TextField fullWidth margin='normal' id='emailAddress' label='Email Address' size='small' style={{ background: '#E8EDF5', color: '#4A789C' }} />
-                    <TextField fullWidth margin='normal' id='password' label='Password' type='password' size='small' style={{ background: '#E8EDF5', color: '#4A789C' }} />
-                    <Button variant='contained' style={{ borderRadius: '12px', margin: '1rem', background: '#2196D4' }}>Log In</Button>
+                    <form>
+                        <TextField required fullWidth margin='normal' id='emailAddress' label='Email Address' size='small' style={{ background: '#E8EDF5', color: '#4A789C' }} />
+                        <TextField required fullWidth margin='normal' id='password' label='Password' type='password' size='small' style={{ background: '#E8EDF5', color: '#4A789C' }} />
+                        <Button type='submit' variant='contained' style={{ borderRadius: '12px', margin: '1rem', background: '#2196D4' }}>Log In</Button>
+                    </form>
                     <Typography variant="body2" align='center' textAlign='center' color='#4A789C' style={{ margin: '0.25rem' }}>
                         Forgot Password?
                     </Typography>
