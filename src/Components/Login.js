@@ -14,7 +14,7 @@ function Login() {
                     </Typography>
                     <TextField fullWidth margin='normal' id='emailAddress' label='Email Address' size='small' style={{ background: '#E8EDF5', color: '#4A789C' }} />
                     <TextField fullWidth margin='normal' id='password' label='Password' type='password' size='small' style={{ background: '#E8EDF5', color: '#4A789C' }} />
-                    <Button variant='contained' style={{ borderRadius: '12px', margin: '1rem' }}>Log In</Button>
+                    <Button variant='contained' style={{ borderRadius: '12px', margin: '1rem', background: '#2196D4' }}>Log In</Button>
                     <Typography variant="body2" align='center' textAlign='center' color='#4A789C' style={{ margin: '0.25rem' }}>
                         Forgot Password?
                     </Typography>

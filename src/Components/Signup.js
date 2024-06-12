@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Box, Button, Container, TextField, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 function Signup() {
     return (
@@ -17,7 +18,7 @@ function Signup() {
                     <TextField fullWidth margin='normal' id='emailAddress' label='Email Address' size='small' style={{ background: '#E8EDF5', color: '#4A789C' }} />
                     <TextField fullWidth margin='normal' id='password' label='Password' type='password' size='small' style={{ background: '#E8EDF5', color: '#4A789C' }} />
                     <TextField fullWidth margin='normal' id='confirmPassword' label='Confirm Password' type='password' size='small' style={{ background: '#E8EDF5', color: '#4A789C' }} />
-                    <Button variant='contained' style={{ borderRadius: '12px', margin: '1rem' }}>Continue</Button>
+                    <Button component={Link} to="/question" variant='contained' style={{ borderRadius: '12px', margin: '1rem', background: '#2196D4' }}>Continue</Button>
                     <Typography variant="body2" align='center' textAlign='center' color='#4A789C' style={{ margin: '0.25rem' }}>
                         By clicking on continue, you agree to our terms of service and privacy policy
                     </Typography>

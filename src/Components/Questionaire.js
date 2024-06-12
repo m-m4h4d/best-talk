@@ -3,7 +3,7 @@ import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import { CalculateOutlined, DeveloperModeRounded, Draw, ScreenshotMonitor, Translate } from '@mui/icons-material';
 
 const Questionnaire = () => {
-    const [selectedGoal, setSelectedGoal] = useState(null);
+    const [selectedGoals, setSelectedGoals] = useState([]);
 
     const goals = [
         { image: <Translate />, label: "Foreign Language", color: '#C35B101A' },
@@ -14,7 +14,13 @@ const Questionnaire = () => {
     ];
 
     const handleGoalClick = (index) => {
-        setSelectedGoal(index);
+        setSelectedGoals((prevSelectedGoals) => {
+            if (prevSelectedGoals.includes(index)) {
+                return prevSelectedGoals.filter((goalIndex) => goalIndex !== index);
+            } else {
+                return [...prevSelectedGoals, index];
+            }
+        });
     };
 
     return (
@@ -40,7 +46,7 @@ const Questionnaire = () => {
                                         borderRadius: '0.75rem',
                                         background: '#FFFFFF',
                                         cursor: 'pointer',
-                                        outline: selectedGoal === index ? '2px solid #2196D4' : 'none'
+                                        outline: selectedGoals.includes(index) ? '2px solid #2196D4' : 'none'
                                     }}
                                     sx={{
                                         boxShadow: '0px 4px 10px 0px #00000026',
@@ -56,7 +62,7 @@ const Questionnaire = () => {
                             </Grid>
                         ))}
                     </Grid>
-                    <Button variant='contained' style={{ borderRadius: '12px', margin: '2rem 2rem 0 2rem', background: '#2196D4' }}>Continue</Button>
+                    <Button onClick={() => alert('clicked')} variant='contained' style={{ borderRadius: '12px', margin: '2rem 2rem 0 2rem', background: '#2196D4' }}>Continue</Button>
                 </Box>
             </Container>
         </div>
