@@ -15,7 +15,7 @@ function Login() {
                         <MuiLink component={Link} to='/signup' style={{ textDecoration: 'none', color: 'black' }}>Sign up</MuiLink>
                     </Typography>
                     <form>
-                        <TextField required fullWidth margin='normal' id='emailAddress' label='Email Address' size='small' style={{ background: '#E8EDF5', color: '#4A789C' }} />
+                        <TextField required fullWidth margin='normal' id='email' label='Email Address' type='email' size='small' style={{ background: '#E8EDF5', color: '#4A789C' }} />
                         <TextField required fullWidth margin='normal' id='password' label='Password' type='password' size='small' style={{ background: '#E8EDF5', color: '#4A789C' }} />
                         <Button type='submit' variant='contained' style={{ borderRadius: '12px', margin: '1rem', background: '#2196D4' }}>Log In</Button>
                     </form>

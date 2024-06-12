@@ -6,7 +6,7 @@ function Signup() {
     const [values, setValues] = React.useState({
         firstName: '',
         lastName: '',
-        emailAddress: '',
+        email: '',
         password: '',
         confirmPassword: ''
     });
@@ -84,12 +84,12 @@ function Signup() {
                             required
                             fullWidth
                             margin='normal'
-                            id='emailAddress'
+                            id='email'
                             label='Email Address'
                             type='email'
                             size='small'
-                            value={values.emailAddress}
-                            onChange={handleChange('emailAddress')}
+                            value={values.email}
+                            onChange={handleChange('email')}
                             style={{ background: '#E8EDF5', color: '#4A789C' }}
                         />
                         <TextField
