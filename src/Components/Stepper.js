@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Button, MobileStepper, Typography, LinearProgress } from '@mui/material';
+import { Box, Button, Typography, LinearProgress } from '@mui/material';
 
 const steps = [
     'Profile Setup',
@@ -84,13 +84,6 @@ function Stepper() {
                                 </>
                             )}
                         </Box>
-                        <MobileStepper
-                            variant="progress"
-                            steps={steps.length}
-                            position="static"
-                            activeStep={activeStep}
-                            sx={{ maxWidth: 400, flexGrow: 1, display: 'none' }} // Hide the MobileStepper
-                        />
                     </Box>
                 )}
                 <Typography sx={{ mt: 1 }}>{`${Math.round(progress)}% completed`}</Typography>
