@@ -1,49 +1,100 @@
 import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
-import { Button, MobileStepper } from '@mui/material';
-import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
+import { Box, Button, MobileStepper, Typography, LinearProgress } from '@mui/material';
+
+const steps = [
+    'Profile Setup', 
+    'What do you teach?', 
+    'Areas of expertise', 
+    'Teaching experience', 
+    'Certifications', 
+    'Introduction', 
+    'Availability', 
+    'Submitted'
+];
 
 function Stepper() {
-  const theme = useTheme();
-  const [activeStep, setActiveStep] = React.useState(0);
+    const [activeStep, setActiveStep] = React.useState(0);
+    const [skipped, setSkipped] = React.useState(new Set());
 
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
+    const isStepOptional = (step) => step === 4;
 
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
+    const isStepSkipped = (step) => skipped.has(step);
 
-  return (
-    <MobileStepper
-      variant="progress"
-      steps={6}
-      position="static"
-      activeStep={activeStep}
-      sx={{ maxWidth: 400, flexGrow: 1 }}
-      nextButton={
-        <Button size="small" onClick={handleNext} disabled={activeStep === 5}>
-          Next
-          {theme.direction === 'rtl' ? (
-            <KeyboardArrowLeft />
-          ) : (
-            <KeyboardArrowRight />
-          )}
-        </Button>
-      }
-      backButton={
-        <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-          {theme.direction === 'rtl' ? (
-            <KeyboardArrowRight />
-          ) : (
-            <KeyboardArrowLeft />
-          )}
-          Back
-        </Button>
-      }
-    />
-  );
+    const handleNext = () => {
+        let newSkipped = skipped;
+        if (isStepSkipped(activeStep)) {
+            newSkipped = new Set(newSkipped.values());
+            newSkipped.delete(activeStep);
+        }
+
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        setSkipped(newSkipped);
+    };
+
+    const handleBack = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    };
+
+    const handleSkip = () => {
+        if (!isStepOptional(activeStep)) {
+            throw new Error("You can't skip a step that isn't optional.");
+        }
+
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        setSkipped((prevSkipped) => {
+            const newSkipped = new Set(prevSkipped.values());
+            newSkipped.add(activeStep);
+            return newSkipped;
+        });
+    };
+
+    const progress = (activeStep / (steps.length - 1)) * 100;
+
+    return (
+        <Box sx={{ width: '100%', textAlign: 'center' }}>
+            <LinearProgress variant="determinate" value={progress} sx={{ marginBottom: 2 }} />
+            <Typography variant="h6" sx={{ marginBottom: 2 }}>
+                {steps[activeStep]}
+            </Typography>
+            {activeStep === steps.length ? (
+                <Typography sx={{ mt: 2, mb: 1 }}>
+                    All steps completed - you're finished
+                </Typography>
+            ) : (
+                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', pt: 2 }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', maxWidth: 400 }}>
+                        {activeStep < steps.length - 1 && (
+                            <>
+                                <Button
+                                    color="inherit"
+                                    disabled={activeStep === 0}
+                                    onClick={handleBack}
+                                >
+                                    Back
+                                </Button>
+                                {isStepOptional(activeStep) && (
+                                    <Button color="inherit" onClick={handleSkip}>
+                                        Skip
+                                    </Button>
+                                )}
+                                <Button onClick={handleNext}>
+                                    {activeStep === steps.length - 2 ? 'Submit' : 'Next'}
+                                </Button>
+                            </>
+                        )}
+                    </Box>
+                    <MobileStepper
+                        variant="progress"
+                        steps={steps.length}
+                        position="static"
+                        activeStep={activeStep}
+                        sx={{ maxWidth: 400, flexGrow: 1, display: 'none' }} // Hide the MobileStepper
+                    />
+                </Box>
+            )}
+            <Typography sx={{ mt: 1 }}>{`${Math.round(progress)}% completed`}</Typography>
+        </Box>
+    );
 }
 
 export default Stepper;
