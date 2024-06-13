@@ -3,7 +3,7 @@ import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import { CalculateOutlined, DeveloperModeRounded, Draw, ScreenshotMonitor, Translate } from '@mui/icons-material';
 import { useLocation } from 'react-router-dom';
 
-const Questionnaire = () => {
+const Question = () => {
     const [selectedGoals, setSelectedGoals] = useState([]);
     const location = useLocation();
     const userData = location.state?.userData || {};
@@ -82,4 +82,4 @@ const Questionnaire = () => {
     );
 };
 
-export default Questionnaire;
+export default Question;

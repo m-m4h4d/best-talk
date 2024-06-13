@@ -45,7 +45,7 @@ function Signup() {
         if (category === 'Learner') {
             navigate('/question', { state: { userData } });
         } else {
-            return;
+            navigate('/stepper', { state: { userData } });
         }
     };
 
