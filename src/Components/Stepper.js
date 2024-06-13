@@ -1,9 +1,7 @@
 import * as React from 'react';
 import { useTheme } from '@mui/material/styles';
-import MobileStepper from '@mui/material/MobileStepper';
-import Button from '@mui/material/Button';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
+import { Button, MobileStepper } from '@mui/material';
+import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
 
 function Stepper() {
   const theme = useTheme();
