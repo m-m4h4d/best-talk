@@ -2,14 +2,14 @@ import * as React from 'react';
 import { Box, Button, MobileStepper, Typography, LinearProgress } from '@mui/material';
 
 const steps = [
-    'Profile Setup', 
-    'What do you teach?', 
-    'Areas of expertise', 
-    'Teaching experience', 
-    'Certifications', 
-    'Introduction', 
-    'Availability', 
-    'Submitted'
+    'Profile Setup',
+    'What do you teach?',
+    'Areas of expertise',
+    'Teaching experience',
+    'Certifications',
+    'Introduction',
+    'Availability',
+    'Your profile is submitted for approval.'
 ];
 
 function Stepper() {
@@ -51,49 +51,51 @@ function Stepper() {
     const progress = (activeStep / (steps.length - 1)) * 100;
 
     return (
-        <Box sx={{ width: '100%', textAlign: 'center' }}>
-            <LinearProgress variant="determinate" value={progress} sx={{ marginBottom: 2 }} />
-            <Typography variant="h6" sx={{ marginBottom: 2 }}>
-                {steps[activeStep]}
-            </Typography>
-            {activeStep === steps.length ? (
-                <Typography sx={{ mt: 2, mb: 1 }}>
-                    All steps completed - you're finished
+        <div style={{ height: '100vh', background: '#F7FAFC' }}>
+            <Box sx={{ width: '100%', textAlign: 'center', background: '#F7FAFC' }}>
+                <LinearProgress variant="determinate" value={progress} sx={{ marginBottom: 2 }} />
+                <Typography variant="h6" sx={{ marginBottom: 2 }}>
+                    {steps[activeStep]}
                 </Typography>
-            ) : (
-                <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', pt: 2 }}>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', maxWidth: 400 }}>
-                        {activeStep < steps.length - 1 && (
-                            <>
-                                <Button
-                                    color="inherit"
-                                    disabled={activeStep === 0}
-                                    onClick={handleBack}
-                                >
-                                    Back
-                                </Button>
-                                {isStepOptional(activeStep) && (
-                                    <Button color="inherit" onClick={handleSkip}>
-                                        Skip
+                {activeStep === (steps.length - 1) ? (
+                    <Typography sx={{ mt: 2, mb: 1 }}>
+                        We'll get back to you in 24-48 working hours.
+                    </Typography>
+                ) : (
+                    <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', pt: 2 }}>
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', maxWidth: 400 }}>
+                            {activeStep < steps.length - 1 && (
+                                <>
+                                    <Button
+                                        color="inherit"
+                                        disabled={activeStep === 0}
+                                        onClick={handleBack}
+                                    >
+                                        Back
                                     </Button>
-                                )}
-                                <Button onClick={handleNext}>
-                                    {activeStep === steps.length - 2 ? 'Submit' : 'Next'}
-                                </Button>
-                            </>
-                        )}
+                                    {isStepOptional(activeStep) && (
+                                        <Button color="inherit" onClick={handleSkip}>
+                                            Skip
+                                        </Button>
+                                    )}
+                                    <Button onClick={handleNext}>
+                                        {activeStep === steps.length - 2 ? 'Submit' : 'Next'}
+                                    </Button>
+                                </>
+                            )}
+                        </Box>
+                        <MobileStepper
+                            variant="progress"
+                            steps={steps.length}
+                            position="static"
+                            activeStep={activeStep}
+                            sx={{ maxWidth: 400, flexGrow: 1, display: 'none' }} // Hide the MobileStepper
+                        />
                     </Box>
-                    <MobileStepper
-                        variant="progress"
-                        steps={steps.length}
-                        position="static"
-                        activeStep={activeStep}
-                        sx={{ maxWidth: 400, flexGrow: 1, display: 'none' }} // Hide the MobileStepper
-                    />
-                </Box>
-            )}
-            <Typography sx={{ mt: 1 }}>{`${Math.round(progress)}% completed`}</Typography>
-        </Box>
+                )}
+                <Typography sx={{ mt: 1 }}>{`${Math.round(progress)}% completed`}</Typography>
+            </Box>
+        </div>
     );
 }
 
