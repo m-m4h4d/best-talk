@@ -6,6 +6,7 @@ import StepThird from './Steps/StepThird';
 import StepFourth from './Steps/StepFourth';
 import StepFifth from './Steps/StepFifth';
 import StepSixth from './Steps/StepSixth';
+import StepFinal from './Steps/StepFinal';
 import StepLast from './Steps/StepLast';
 
 const steps = [
@@ -132,6 +133,7 @@ function Stepper() {
                         )}
                         {activeStep === 4 && <StepFifth />}
                         {activeStep === 5 && <StepSixth />}
+                        {activeStep === 6 && <StepFinal />}
                         <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', maxWidth: 400, mt: 2 }}>
                             <Button
                                 color="inherit"
