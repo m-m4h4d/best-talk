@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { Box, Button, Typography, LinearProgress } from '@mui/material';
 import StepFirst from './Steps/StepFirst';
 import StepSecond from './Steps/StepSecond';
@@ -8,6 +8,7 @@ import StepFifth from './Steps/StepFifth';
 import StepSixth from './Steps/StepSixth';
 import StepFinal from './Steps/StepFinal';
 import StepLast from './Steps/StepLast';
+import { useLocation } from 'react-router-dom';
 
 const steps = [
     'Profile Setup',
@@ -20,25 +21,29 @@ const steps = [
     'Your profile is submitted for approval.'
 ];
 
+const availableAreas = [
+    'Foreign Language', 'Graphic Design', 'Web Programming', 'Mathematics', 'Mobile App Development'
+];
+
 function Stepper() {
-    const [activeStep, setActiveStep] = React.useState(0);
-    const [skipped, setSkipped] = React.useState(new Set());
-    const [educationLevel, setEducationLevel] = React.useState('');
-    const [graduationYear, setGraduationYear] = React.useState('');
-    const [fieldOfStudy, setFieldOfStudy] = React.useState('');
-    const [experience, setExperience] = React.useState('');
+    const [activeStep, setActiveStep] = useState(0);
+    const [skipped, setSkipped] = useState(new Set());
+    const [updatedData, setUpdatedData] = useState({
+        educationLevel: '',
+        graduationYear: '',
+        fieldOfStudy: '',
+        experience: '',
+        areas: [],
+        interests: [],
+        topics: [],
+        specializationsList: [],
+        teachingExperience: '',
+        notableAchievements: '',
+        filePath: ''
+    });
 
-    const [interests, setInterests] = React.useState([]);
-    const [topics, setTopics] = React.useState([]);
-    const [specializationsList, setSpecializationsList] = React.useState([]);
-
-    const [areas, setAreas] = React.useState([]);
-    const availableAreas = [
-        'Foreign Language', 'Graphic Design', 'Web Programming', 'Mathematics', 'Mobile App Development'
-    ];
-
-    const [teachingExperience, setTeachingExperience] = React.useState('');
-    const [notableAchievements, setNotableAchievements] = React.useState('');
+    const location = useLocation();
+    const userData = location.state?.userData || {};
 
     const isStepOptional = (step) => step === 4;
 
@@ -72,6 +77,20 @@ function Stepper() {
         });
     };
 
+    const handleSubmit = () => {
+        const combinedData = {
+            ...userData,
+            ...updatedData,
+            areas: updatedData.areas.join(', '),
+            interests: updatedData.interests.join(', '),
+            topics: updatedData.topics.join(', '),
+            specializationsList: updatedData.specializationsList.join(', ')
+        };
+
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        console.log('Combined Data:', JSON.stringify(combinedData, null, 2));
+    };
+
     const progress = (activeStep / (steps.length - 1)) * 100;
 
     return (
@@ -95,40 +114,31 @@ function Stepper() {
                 ) : (
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', pt: 2 }}>
                         {activeStep === 0 && (
-                            <StepFirst
-                                educationLevel={educationLevel}
-                                setEducationLevel={setEducationLevel}
-                                graduationYear={graduationYear}
-                                setGraduationYear={setGraduationYear}
-                                fieldOfStudy={fieldOfStudy}
-                                setFieldOfStudy={setFieldOfStudy}
-                                experience={experience}
-                                setExperience={setExperience}
-                            />
+                            <StepFirst updatedData={updatedData} setUpdatedData={setUpdatedData} />
                         )}
                         {activeStep === 1 && (
                             <StepSecond
-                                interests={interests}
-                                setInterests={setInterests}
-                                topics={topics}
-                                setTopics={setTopics}
-                                specializationsList={specializationsList}
-                                setSpecializationsList={setSpecializationsList}
+                                interests={updatedData.interests}
+                                setInterests={(interests) => setUpdatedData({ ...updatedData, interests })}
+                                topics={updatedData.topics}
+                                setTopics={(topics) => setUpdatedData({ ...updatedData, topics })}
+                                specializationsList={updatedData.specializationsList}
+                                setSpecializationsList={(specializationsList) => setUpdatedData({ ...updatedData, specializationsList })}
                             />
                         )}
                         {activeStep === 2 && (
                             <StepThird
-                                areas={areas}
-                                setAreas={setAreas}
+                                areas={updatedData.areas}
+                                setAreas={(areas) => setUpdatedData({ ...updatedData, areas })}
                                 availableAreas={availableAreas}
                             />
                         )}
                         {activeStep === 3 && (
                             <StepFourth
-                                teachingExperience={teachingExperience}
-                                setTeachingExperience={setTeachingExperience}
-                                notableAchievements={notableAchievements}
-                                setNotableAchievements={setNotableAchievements}
+                                teachingExperience={updatedData.teachingExperience}
+                                setTeachingExperience={(teachingExperience) => setUpdatedData({ ...updatedData, teachingExperience })}
+                                notableAchievements={updatedData.notableAchievements}
+                                setNotableAchievements={(notableAchievements) => setUpdatedData({ ...updatedData, notableAchievements })}
                             />
                         )}
                         {activeStep === 4 && <StepFifth />}
@@ -147,7 +157,7 @@ function Stepper() {
                                     Skip
                                 </Button>
                             )}
-                            <Button onClick={handleNext}>
+                            <Button onClick={activeStep === steps.length - 2 ? handleSubmit : handleNext}>
                                 {activeStep === steps.length - 2 ? 'Submit' : 'Next'}
                             </Button>
                         </Box>
