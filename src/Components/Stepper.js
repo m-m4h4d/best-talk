@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Box, Button, Typography, LinearProgress } from '@mui/material';
 import StepFirst from './Steps/StepFirst';
 import StepSecond from './Steps/StepSecond';
+import StepThird from './Steps/StepThird';
 import StepLast from './Steps/StepLast';
 
 const steps = [
@@ -26,6 +27,11 @@ function Stepper() {
     const [interests, setInterests] = React.useState([]);
     const [topics, setTopics] = React.useState([]);
     const [specializationsList, setSpecializationsList] = React.useState([]);
+
+    const [areas, setAreas] = React.useState([]);
+    const availableAreas = [
+        'Foreign Language', 'Graphic Design', 'Web Programming', 'Mathematics', 'Mobile App Development'
+    ];
 
     const isStepOptional = (step) => step === 4;
 
@@ -101,6 +107,13 @@ function Stepper() {
                                 setTopics={setTopics}
                                 specializationsList={specializationsList}
                                 setSpecializationsList={setSpecializationsList}
+                            />
+                        )}
+                        {activeStep === 2 && (
+                            <StepThird
+                                areas={areas}
+                                setAreas={setAreas}
+                                availableAreas={availableAreas}
                             />
                         )}
                         <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', maxWidth: 400, mt: 2 }}>
