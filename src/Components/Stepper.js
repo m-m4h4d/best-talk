@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { Box, Button, Typography, LinearProgress } from '@mui/material';
+import StepFirst from './Steps/StepFirst';
+import StepLast from './Steps/StepLast';
 
 const steps = [
     'Profile Setup',
@@ -15,6 +17,10 @@ const steps = [
 function Stepper() {
     const [activeStep, setActiveStep] = React.useState(0);
     const [skipped, setSkipped] = React.useState(new Set());
+    const [educationLevel, setEducationLevel] = React.useState('');
+    const [graduationYear, setGraduationYear] = React.useState('');
+    const [fieldOfStudy, setFieldOfStudy] = React.useState('');
+    const [experience, setExperience] = React.useState('');
 
     const isStepOptional = (step) => step === 4;
 
@@ -51,42 +57,56 @@ function Stepper() {
     const progress = (activeStep / (steps.length - 1)) * 100;
 
     return (
-        <div style={{ height: '100vh', background: '#F7FAFC' }}>
-            <Box sx={{ width: '100%', textAlign: 'center', background: '#F7FAFC' }}>
-                <LinearProgress variant="determinate" value={progress} sx={{ marginBottom: 2 }} />
-                <Typography variant="h6" sx={{ marginBottom: 2 }}>
-                    {steps[activeStep]}
-                </Typography>
+        <div style={{ height: '100vh', background: '#F7FAFC', maxWidth: '100rem' }}>
+            <Box sx={{ textAlign: 'center', background: '#F7FAFC', padding: 2 }}>
+                {activeStep < steps.length - 1 && (
+                    <>
+                        <Typography variant="h6" sx={{ marginBottom: 1 }}>
+                            {steps[activeStep]}
+                        </Typography>
+                        <Typography variant="body2" sx={{ marginBottom: 2 }}>
+                            {`${Math.round(progress)}% completed`}
+                        </Typography>
+                        <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: 2 }}>
+                            <LinearProgress variant="determinate" value={progress} sx={{ height: 10, width: '100%', maxWidth: 1000, borderRadius: 5 }} />
+                        </Box>
+                    </>
+                )}
                 {activeStep === (steps.length - 1) ? (
-                    <Typography sx={{ mt: 2, mb: 1 }}>
-                        We'll get back to you in 24-48 working hours.
-                    </Typography>
+                    <StepLast />
                 ) : (
                     <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', pt: 2 }}>
-                        <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', maxWidth: 400 }}>
-                            {activeStep < steps.length - 1 && (
-                                <>
-                                    <Button
-                                        color="inherit"
-                                        disabled={activeStep === 0}
-                                        onClick={handleBack}
-                                    >
-                                        Back
-                                    </Button>
-                                    {isStepOptional(activeStep) && (
-                                        <Button color="inherit" onClick={handleSkip}>
-                                            Skip
-                                        </Button>
-                                    )}
-                                    <Button onClick={handleNext}>
-                                        {activeStep === steps.length - 2 ? 'Submit' : 'Next'}
-                                    </Button>
-                                </>
+                        {activeStep === 0 && (
+                            <StepFirst
+                                educationLevel={educationLevel}
+                                setEducationLevel={setEducationLevel}
+                                graduationYear={graduationYear}
+                                setGraduationYear={setGraduationYear}
+                                fieldOfStudy={fieldOfStudy}
+                                setFieldOfStudy={setFieldOfStudy}
+                                experience={experience}
+                                setExperience={setExperience}
+                            />
+                        )}
+                        <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', maxWidth: 400, mt: 2 }}>
+                            <Button
+                                color="inherit"
+                                disabled={activeStep === 0}
+                                onClick={handleBack}
+                            >
+                                Back
+                            </Button>
+                            {isStepOptional(activeStep) && (
+                                <Button color="inherit" onClick={handleSkip}>
+                                    Skip
+                                </Button>
                             )}
+                            <Button onClick={handleNext}>
+                                {activeStep === steps.length - 2 ? 'Submit' : 'Next'}
+                            </Button>
                         </Box>
                     </Box>
                 )}
-                <Typography sx={{ mt: 1 }}>{`${Math.round(progress)}% completed`}</Typography>
             </Box>
         </div>
     );
