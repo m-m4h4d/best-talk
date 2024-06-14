@@ -3,6 +3,7 @@ import { Box, Button, Typography, LinearProgress } from '@mui/material';
 import StepFirst from './Steps/StepFirst';
 import StepSecond from './Steps/StepSecond';
 import StepThird from './Steps/StepThird';
+import StepFourth from './Steps/StepFourth';
 import StepLast from './Steps/StepLast';
 
 const steps = [
@@ -32,6 +33,9 @@ function Stepper() {
     const availableAreas = [
         'Foreign Language', 'Graphic Design', 'Web Programming', 'Mathematics', 'Mobile App Development'
     ];
+
+    const [teachingExperience, setTeachingExperience] = React.useState('');
+    const [notableAchievements, setNotableAchievements] = React.useState('');
 
     const isStepOptional = (step) => step === 4;
 
@@ -114,6 +118,14 @@ function Stepper() {
                                 areas={areas}
                                 setAreas={setAreas}
                                 availableAreas={availableAreas}
+                            />
+                        )}
+                        {activeStep === 3 && (
+                            <StepFourth
+                                teachingExperience={teachingExperience}
+                                setTeachingExperience={setTeachingExperience}
+                                notableAchievements={notableAchievements}
+                                setNotableAchievements={setNotableAchievements}
                             />
                         )}
                         <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', maxWidth: 400, mt: 2 }}>
