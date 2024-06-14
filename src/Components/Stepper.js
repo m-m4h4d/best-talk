@@ -4,6 +4,7 @@ import StepFirst from './Steps/StepFirst';
 import StepSecond from './Steps/StepSecond';
 import StepThird from './Steps/StepThird';
 import StepFourth from './Steps/StepFourth';
+import StepFifth from './Steps/StepFifth';
 import StepLast from './Steps/StepLast';
 
 const steps = [
@@ -128,6 +129,7 @@ function Stepper() {
                                 setNotableAchievements={setNotableAchievements}
                             />
                         )}
+                        {activeStep === 4 && <StepFifth />}
                         <Box sx={{ display: 'flex', justifyContent: 'space-between', width: '100%', maxWidth: 400, mt: 2 }}>
                             <Button
                                 color="inherit"
