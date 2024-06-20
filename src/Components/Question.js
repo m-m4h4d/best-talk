@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import { CalculateOutlined, DeveloperModeRounded, Draw, ScreenshotMonitor, Translate } from '@mui/icons-material';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Question = () => {
     const [selectedGoals, setSelectedGoals] = useState([]);
     const location = useLocation();
     const userData = location.state?.userData || {};
+    const navigate = useNavigate();
 
     const goals = [
         { image: <Translate />, label: "Foreign Language", color: '#C35B101A' },
@@ -35,6 +36,7 @@ const Question = () => {
         const selectedGoalData = selectedGoals.map((goalIndex) => goals[goalIndex].label);
         const updatedUserData = { ...userData, goals: selectedGoalData };
         console.log(JSON.stringify(updatedUserData, null, 2));
+        navigate('/instructor-search', { state: { userData: updatedUserData } });
     };
 
     return (

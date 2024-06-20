@@ -6,6 +6,7 @@ import Signup from './Components/Signup';
 import Login from './Components/Login';
 import Question from './Components/Question';
 import Stepper from './Components/Stepper';
+import InstructorSearch from './Components/InstructorSearch';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/question" element={<Question />} />
                 <Route path="/stepper" element={<Stepper />} />
+                <Route path="/instructor-search" element={<InstructorSearch />} />
             </Routes>
         </Router>
     );
