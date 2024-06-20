@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Button, Checkbox, FormControlLabel, Grid, Typography, ToggleButton, ToggleButtonGroup, IconButton } from '@mui/material';
 import { Star, StarBorder, PlayArrow } from '@mui/icons-material';
+import instructorImage from '../Images/instructor.png';
 
 const countries = ['Turkey', 'America', 'England', 'France', 'Germany', 'Canada', 'Italy', 'Spain'];
 const languages = ['Turkish', 'English', 'German', 'French'];
@@ -20,6 +21,7 @@ const InstructorSearch = () => {
     const handleToggle = (setter) => (event, newValues) => setter(newValues);
 
     const instructors = Array(5).fill({
+        image: instructorImage,
         name: 'Eve, Age 35, Female',
         description: 'Eve is an experienced English teacher with a passion for helping students improve their language skills. She has a friendly and patient teaching style and is dedicated to making the learning process enjoyable and effective. In her free time, she enjoys reading, hiking, and trying new foods.',
         rating: 4,
@@ -155,7 +157,10 @@ const InstructorSearch = () => {
                         View all
                     </Button>
                     {instructors.map((instructor, index) => (
-                        <Box key={index} mb={2} p={2} bgcolor="white" borderRadius={2} boxShadow={1} display="flex" justifyContent="space-between">
+                        <Box key={index} mb={2} p={2} bgcolor="white" borderRadius={2} boxShadow={1} display="flex" justifyContent="space-around" >
+                            <Box display="flex">
+                                <img src={instructor.image} alt="Instructor" style={{ width: 100, height: 100, borderRadius: '5%' }} />
+                            </Box>
                             <Box>
                                 <Typography variant="h6">{instructor.name}</Typography>
                                 <Box display="flex" alignItems="center">
