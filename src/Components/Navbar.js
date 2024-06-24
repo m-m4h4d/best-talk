@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Button, Grid, Drawer, List, ListItem, ListItemText, Typography, Box } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Button, Grid, Drawer, List, ListItem, ListItemText, Typography, Dialog, DialogContent } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../Images/logo.png';
-import '../App.css';
 import Tabs from './Tabs';
 import { Link } from 'react-router-dom';
 
@@ -70,9 +69,47 @@ const Navbar = () => {
                     </List>
                 </Drawer>
             </AppBar>
-            <Box sx={{ display: signupDrawerOpen ? 'flex' : 'none', justifyContent: 'flex-end', position: 'relative', paddingLeft: '6rem', alignItems: 'center' }}>
-                <Tabs size="sm" />
-            </Box>
+            <Dialog
+                open={signupDrawerOpen}
+                onClose={handleSignupDrawerToggle}
+                fullWidth
+                maxWidth="sm"
+                sx={{
+                    display: { xs: 'block', md: 'block' },
+                    "& .MuiDialog-paper": {
+                        background: "#E9F4FB",
+                        display: "flex",
+                        flexDirection: "row",
+                        position: "absolute",
+                        top: "10px",
+                        right: "10px",
+                        margin: 0,
+                        paddingTop: "1rem",
+                        width: "38rem",
+                        height: "auto",
+                        borderRadius: "1rem",
+                        overflow: "hidden",
+                        "& .MuiDialogContent-root": {
+                            padding: 0,
+                            "& .MuiTabs-root": {
+                                backgroundColor: "#145C82",
+                                color: "#ffffff",
+                                "& .MuiTab-root": {
+                                    minWidth: "auto",
+                                    padding: "0",
+                                    "&.Mui-selected": {
+                                        backgroundColor: "#1E88E5",
+                                    },
+                                },
+                            },
+                        },
+                    }
+                }}
+            >
+                <DialogContent>
+                    <Tabs size="sm" />
+                </DialogContent>
+            </Dialog>
         </nav>
     );
 };

@@ -153,17 +153,3 @@
   align-items: center;
   background: #ffffff;
 }
-
-/* Path: src/Components/Footer.js */
-footer {
-  color: #ffffff;
-  background: #145C82;
-}
-
-footer .mid-left ul {
-  list-style: none;
-}
-
-footer .mid-right ul {
-  list-style: none;
-}
