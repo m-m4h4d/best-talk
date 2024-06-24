@@ -7,6 +7,7 @@ import Login from './Components/Login';
 import Question from './Components/Question';
 import Stepper from './Components/Stepper';
 import InstructorSearch from './Components/InstructorSearch';
+import InstructorDashboard from './Components/InstructorDashboard';
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/question" element={<Question />} />
                 <Route path="/stepper" element={<Stepper />} />
                 <Route path="/instructor-search" element={<InstructorSearch />} />
+                <Route path="/instructor-dashboard" element={<InstructorDashboard />} />
             </Routes>
         </Router>
     );
