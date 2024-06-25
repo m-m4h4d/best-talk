@@ -31,7 +31,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav style={{ background: "radial-gradient(75.49% 265.37% at 24.51% 40.67%, #F6FBFD 0%, #E9F4FB 100%)", paddingTop: '0.5rem' }}>
+        <nav style={{ background: "radial-gradient(75.49% 265.37% at 24.51% 40.67%, #F6FBFD 0%, #E9F4FB 100%)", paddingTop: '0.4rem' }}>
             <AppBar position="static" color="transparent" elevation={0}>
                 <Toolbar>
                     <Grid container alignItems="center" justifyContent="space-around">

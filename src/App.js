@@ -8,6 +8,9 @@ import Question from './Components/Question';
 import Stepper from './Components/Stepper';
 import InstructorSearch from './Components/InstructorSearch';
 import InstructorDashboard from './Components/InstructorDashboard';
+import InstructorListing from './Components/InstructorListing';
+import InstructorDetail from './Components/InstructorDetail';
+import ScheduleLessonPopup from './Components/ScheduleLessonPopup';
 
 function App() {
     return (
@@ -20,6 +23,9 @@ function App() {
                 <Route path="/stepper" element={<Stepper />} />
                 <Route path="/instructor-search" element={<InstructorSearch />} />
                 <Route path="/instructor-dashboard" element={<InstructorDashboard />} />
+                <Route path="/instructor-listing" element={<InstructorListing />} />
+                <Route path="/instructor-detail" element={<InstructorDetail />} />
+                <Route path="/schedule-lesson-popup" element={<ScheduleLessonPopup />} />
             </Routes>
         </Router>
     );

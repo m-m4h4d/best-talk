@@ -11,5 +11,8 @@
     "not and_ff <= 126",
     "not firefox <= 127",
     "not opera <= 110"
-  ]
+  ],
+  "hints": {
+    "apple-touch-icons": "off"
+  }
 }
