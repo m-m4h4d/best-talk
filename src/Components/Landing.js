@@ -40,11 +40,8 @@ function Home() {
     return (
         <div className='body'>
             <div className="App">
-
+                <Navbar />
                 <div className='landing'>
-
-                    <Navbar />
-
                     <Container style={{ marginTop: '2rem' }}>
                         <Grid container spacing={2} alignItems="center">
                             <Grid item xs={12} md={6}>
