@@ -7,8 +7,7 @@
 .App {
   width: 100%;
   background: #fbfbfb;
-  font-family: sans-serif;
-  text-align: center;
+  font-family: 'Roboto', sans-serif, 'Montserrat';
 }
 
 /* Path: src/Components/Landing.js */
