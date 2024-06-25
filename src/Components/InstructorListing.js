@@ -19,6 +19,8 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 // const sampleData = [
 //   {
@@ -908,6 +910,7 @@ const InstructorListing = () => {
 
   return (
     <ThemeProvider theme={theme}>
+    <Navbar />
       <Box p={2}>
         <Grid container spacing={2}>
           <Grid item xs={12}>
@@ -945,6 +948,7 @@ const InstructorListing = () => {
           </Grid>
         </Grid>
       </Box>
+      <Footer />
     </ThemeProvider>
   );
 };
