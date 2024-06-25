@@ -42,7 +42,7 @@ function Home() {
             <div className="App">
 
                 <div className='landing'>
-                    
+
                     <Navbar />
 
                     <Container style={{ marginTop: '2rem' }}>

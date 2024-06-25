@@ -12,8 +12,8 @@
 /* Path: src/Components/Landing.js */
 .landing {
   background: radial-gradient(75.49% 265.37% at 24.51% 40.67%, #F6FBFD 0%, #E9F4FB 100%);
-  padding: 3vw 0 6vw 0;
-  margin-bottom: 16vw;
+  padding: 0.5rem 0 6rem 0;
+  margin-bottom: 8vw;
 }
 
 .pink {

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { AppBar, Toolbar, IconButton, Button, Grid, Drawer, List, ListItem, ListItemText, Typography, Paper, ClickAwayListener } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Button, Grid, Drawer, List, ListItem, ListItemText, Typography, Paper, ClickAwayListener, Slide } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../Images/logo.png';
 import Tabs from './Tabs';
@@ -35,9 +35,7 @@ const Navbar = () => {
             <AppBar position="static" color="transparent" elevation={0}>
                 <Toolbar>
                     <Grid container alignItems="center" justifyContent="space-around">
-                        <Grid item>
-                            <img src={logo} alt='logo' style={{ height: '50px' }} />
-                        </Grid>
+                            <img src={logo} alt='logo' style={{ width: '10%' }} />
                         <Grid item>
                             <Grid container spacing={2} alignItems="center" sx={{ display: { xs: 'none', md: 'flex' } }}>
                                 {menuItems.map((item, index) => (
@@ -78,22 +76,26 @@ const Navbar = () => {
             </AppBar>
             {signupDrawerOpen && (
                 <ClickAwayListener onClickAway={handleClose}>
-                    <Paper
-                        elevation={3}
-                        sx={{
-                            position: 'absolute',
-                            top: signupButtonRef.current ? signupButtonRef.current.getBoundingClientRect().bottom + window.scrollY + 10 : '10px',
-                            left: signupButtonRef.current ? signupButtonRef.current.getBoundingClientRect().left - 330 : '10px',
-                            width: '34rem',
-                            height: 'auto',
-                            paddingTop: '1rem',
-                            borderRadius: '1rem',
-                            background: '#E9F4FB',
-                            zIndex: 1300,
-                        }}
-                    >
-                        <Tabs size="sm" />
-                    </Paper>
+                    <Slide direction="down" in={signupDrawerOpen} mountOnEnter unmountOnExit>
+                        <Paper
+                            elevation={3}
+                            sx={{
+                                position: 'absolute',
+                                top: signupButtonRef.current ? signupButtonRef.current.getBoundingClientRect().bottom + window.scrollY + 10 : '10px',
+                                left: signupButtonRef.current.getBoundingClientRect().left - 140,
+                                width: '24rem',
+                                height: '2.5rem',
+                                paddingTop: '1.5rem',
+                                borderRadius: '1rem',
+                                background: '#E9F4FB',
+                                zIndex: 1300,
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}
+                        >
+                            <Tabs size="sm" />
+                        </Paper>
+                    </Slide>
                 </ClickAwayListener>
             )}
         </nav>

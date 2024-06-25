@@ -8,8 +8,8 @@ const Footer = () => {
         <footer style={{ backgroundColor: '#145C82', color: '#ffffff', padding: '2rem' }}>
             <Grid container spacing={6} justifyContent="space-around">
                 <Grid item xs={12} md={3}>
-                    <Box display="flex" flexDirection="column" alignItems="center" style={{ marginLeft: '1rem' }}>
-                        <img src={logo} alt='logo' style={{ height: '5vw', marginBottom: '1rem' }} />
+                    <Box display="flex" flexDirection="row" alignItems="center" style={{ marginLeft: '1rem' }}>
+                        <img src={logo} alt='logo' style={{ marginRight: '1rem', width: '40%' }} />
                         <Typography variant="body1" align="center" textAlign="left">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         </Typography>
@@ -24,7 +24,7 @@ const Footer = () => {
                         <li>Course 4</li>
                     </ul>
                 </Grid>
-                <Grid item xs={12} md={3} style={{alignItems: 'center' }}>
+                <Grid item xs={12} md={3} style={{ alignItems: 'center', marginLefteft: '5rem' }}>
                     <Typography variant="h6" gutterBottom align="center" textAlign='left'>Company</Typography>
                     <ul style={{ listStyle: 'none', padding: 0, textAlign: 'left' }}>
                         <li>About Us</li>

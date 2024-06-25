@@ -7,6 +7,9 @@
     "not ie 11",
     "not and_ff <= 123",
     "not firefox <= 123",
-    "not opera <= 106"
+    "not opera <= 106",
+    "not and_ff <= 126",
+    "not firefox <= 127",
+    "not opera <= 110"
   ]
 }
