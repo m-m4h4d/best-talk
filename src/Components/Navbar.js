@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Button, Grid, Drawer, List, ListItem, ListItemText, Typography, Dialog, DialogContent } from '@mui/material';
+import React, { useState, useRef } from 'react';
+import { AppBar, Toolbar, IconButton, Button, Grid, Drawer, List, ListItem, ListItemText, Typography, Paper, ClickAwayListener } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '../Images/logo.png';
 import Tabs from './Tabs';
@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [signupDrawerOpen, setSignupDrawerOpen] = useState(false);
+    const signupButtonRef = useRef(null);
 
     const handleDrawerToggle = () => {
         setDrawerOpen(!drawerOpen);
@@ -15,6 +16,10 @@ const Navbar = () => {
 
     const handleSignupDrawerToggle = () => {
         setSignupDrawerOpen(!signupDrawerOpen);
+    };
+
+    const handleClose = () => {
+        setSignupDrawerOpen(false);
     };
 
     const menuItems = [
@@ -43,7 +48,9 @@ const Navbar = () => {
                                             to={item.to}
                                             variant={item.variant ? item.variant : 'text'}
                                             style={{ color: item.variant ? 'white' : 'black', textTransform: 'none', background: item.variant ? item.color : 'none' }}
-                                            sx={{ borderRadius: 28 }}>
+                                            sx={{ borderRadius: 28 }}
+                                            ref={item.text === 'Sign Up' ? signupButtonRef : null}
+                                        >
                                             {item.text}
                                         </Button>
                                     </Grid>
@@ -69,47 +76,26 @@ const Navbar = () => {
                     </List>
                 </Drawer>
             </AppBar>
-            <Dialog
-                open={signupDrawerOpen}
-                onClose={handleSignupDrawerToggle}
-                fullWidth
-                maxWidth="sm"
-                sx={{
-                    display: { xs: 'block', md: 'block' },
-                    "& .MuiDialog-paper": {
-                        background: "#E9F4FB",
-                        display: "flex",
-                        flexDirection: "row",
-                        position: "absolute",
-                        top: "10px",
-                        right: "10px",
-                        margin: 0,
-                        paddingTop: "1rem",
-                        width: "38rem",
-                        height: "auto",
-                        borderRadius: "1rem",
-                        overflow: "hidden",
-                        "& .MuiDialogContent-root": {
-                            padding: 0,
-                            "& .MuiTabs-root": {
-                                backgroundColor: "#145C82",
-                                color: "#ffffff",
-                                "& .MuiTab-root": {
-                                    minWidth: "auto",
-                                    padding: "0",
-                                    "&.Mui-selected": {
-                                        backgroundColor: "#1E88E5",
-                                    },
-                                },
-                            },
-                        },
-                    }
-                }}
-            >
-                <DialogContent>
-                    <Tabs size="sm" />
-                </DialogContent>
-            </Dialog>
+            {signupDrawerOpen && (
+                <ClickAwayListener onClickAway={handleClose}>
+                    <Paper
+                        elevation={3}
+                        sx={{
+                            position: 'absolute',
+                            top: signupButtonRef.current ? signupButtonRef.current.getBoundingClientRect().bottom + window.scrollY + 10 : '10px',
+                            left: signupButtonRef.current ? signupButtonRef.current.getBoundingClientRect().left - 330 : '10px',
+                            width: '34rem',
+                            height: 'auto',
+                            paddingTop: '1rem',
+                            borderRadius: '1rem',
+                            background: '#E9F4FB',
+                            zIndex: 1300,
+                        }}
+                    >
+                        <Tabs size="sm" />
+                    </Paper>
+                </ClickAwayListener>
+            )}
         </nav>
     );
 };
