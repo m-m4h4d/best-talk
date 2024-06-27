@@ -43,7 +43,7 @@ function Home() {
                 <Navbar />
                 <div className='landing'>
                     <Container style={{ marginTop: '2rem' }}>
-                        <Grid container spacing={2} alignItems="center">
+                        <Grid container spacing={2} alignItems="center" justifyContent="space-around">
                             <Grid item xs={12} md={6}>
                                 <Typography variant="h2">
                                     <span className='pink'>Empower</span> your<br />
@@ -51,13 +51,11 @@ function Home() {
                                     <span className='blue'> best tutors.</span>
                                 </Typography>
                                 <Typography variant="body1" paragraph>
-                                    Our online tutors offer personalized, one-on-one learning to help
-                                    you improve your grades, build your confidence, and achieve your
+                                    Our online tutors offer personalized, one-on-one learning to help you improve your grades, build your confidence, and achieve your
                                     academic goals.
                                 </Typography>
                                 <Button
-                                    onClick={() => handleNavigation('Learner')}
-                                    variant="contained"
+                                    onClick={() => handleNavigation('Learner')} variant="contained"
                                     sx={{
                                         borderRadius: 28,
                                         background: '#2196D4',
@@ -68,15 +66,12 @@ function Home() {
                                 </Button>
                             </Grid>
                             <Grid item xs={12} md={6}>
-                                <img src={image} alt='landing'
-                                    style={{ width: '100%', borderRadius: '30px' }} />
+                                <img src={image} alt='landing' style={{ width: '100%', borderRadius: '30px' }} />
                             </Grid>
                         </Grid>
                     </Container>
                 </div>
-
                 <Tabs />
-
                 <div className='courses'>
                     <Container className='learning' maxWidth='xl'>
                         <Typography variant="h2" align="center" gutterBottom>
@@ -99,34 +94,36 @@ function Home() {
                         </Container>
                     </Container>
                 </div>
-
                 <div className='choose'>
                     <Container>
                         <Typography variant="h2" align="center">
                             Why <span className='pink'>choose us</span>?
                         </Typography>
                         <Grid container spacing={6}>
-                            {[{ img: a, title: "Certified Teachers" }, { img: b, title: "Online Courses" }, { img: c, title: "Certification" }, { img: d, title: "1-to-1 learning" }].map((item, index) => (
-                                <Grid item xs={12} md={6} key={index}>
-                                    <div className='card'>
-                                        <img src={item.img} alt={`card-${index}`} style={{ borderRadius: '10px 0 0 10px' }} />
-                                        <span>
-                                            <Typography variant="h6" component="p"><b>{item.title}</b></Typography>
-                                            <Typography variant="body2">I am text block. Click edit button to change this text. Lorem ipsum dolor</Typography>
-                                            <Button
-                                                onClick={() => alert('clicked')}
-                                                variant="text"
-                                                sx={{ textTransform: 'none', textDecoration: 'underline', borderRadius: 28 }}>
-                                                Learn More
-                                            </Button>
-                                        </span>
-                                    </div>
-                                </Grid>
-                            ))}
+                            {[
+                                { img: a, title: "Certified Teachers" },
+                                { img: b, title: "Online Courses" },
+                                { img: c, title: "Certification" },
+                                { img: d, title: "1-to-1 learning" }].map((item, index) => (
+                                    <Grid item xs={12} md={6} key={index}>
+                                        <div className='card'>
+                                            <img src={item.img} alt={`card-${index}`} style={{ borderRadius: '10px 0 0 10px' }} />
+                                            <span>
+                                                <Typography variant="h6" component="p"><b>{item.title}</b></Typography>
+                                                <Typography variant="body2">I am text block. Click edit button to change this text. Lorem ipsum dolor</Typography>
+                                                <Button
+                                                    onClick={() => alert('clicked')}
+                                                    variant="text"
+                                                    sx={{ textTransform: 'none', textDecoration: 'underline', borderRadius: 28 }}>
+                                                    Learn More
+                                                </Button>
+                                            </span>
+                                        </div>
+                                    </Grid>
+                                ))}
                         </Grid>
                     </Container>
                 </div>
-
                 <div className='trial'>
                     <Container>
                         <Typography variant="h2" align="center">
@@ -153,7 +150,6 @@ function Home() {
                         </Grid>
                     </Container>
                 </div>
-
                 <div className='boost'>
                     <Container className='overlay' background="#ffffff">
                         <Grid container>
@@ -186,7 +182,6 @@ function Home() {
                         </Grid>
                     </Container>
                 </div>
-
                 <Footer />
             </div>
         </div>
