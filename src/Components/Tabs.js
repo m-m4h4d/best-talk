@@ -9,21 +9,21 @@ const Tabs = ({ size = 'md' }) => {
 
     const sizeStyles = {
         sm: {
-            tab: { width: '28vh', height: '8vh' },
+            tab: { width: '9rem', height: '3rem' },
             typography: { fontSize: '0.75rem' },
             div: { padding: '0.3rem 0.5rem' },
             fab: { size: 'small' },
             justify: { justifyContent: 'space-around' }
         },
         md: {
-            tab: { width: '58vh', height: '12vh' },
+            tab: { width: '20rem', height: '5rem' },
             typography: { fontSize: '1.25rem' },
             div: { padding: '0.6rem 1rem' },
             fab: { size: 'medium' },
             justify: { justifyContent: 'space-around' }
         },
         lg: {
-            tab: { width: '70vh', height: '15vh' },
+            tab: { width: '35rem', height: '7rem' },
             typography: { fontSize: '1.5rem' },
             div: { padding: '0.8rem 1.5rem' },
             fab: { size: 'large' },
