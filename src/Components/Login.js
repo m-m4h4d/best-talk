@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Box, Button, Container, TextField, Typography, Link as MuiLink } from '@mui/material';
 import { Link } from 'react-router-dom';
+import Footer from './Footer';
 
 function Login() {
     const [values, setValues] = React.useState({
@@ -31,8 +32,8 @@ function Login() {
     };
 
     return (
-        <div style={{ background: '#F7FAFC', paddingBottom: '13rem' }}>
-            <Container style={{ padding: '2rem' }} align='center'>
+        <div style={{ background: '#F7FAFC' }}>
+            <Container style={{ padding: '2rem', paddingBottom: "21.5rem" }} align='center'>
                 <Box align='center' width='20rem'>
                     <Typography variant="h4" align='center' textAlign='left'>
                         Log in
@@ -90,6 +91,7 @@ function Login() {
                     </Typography>
                 </Box>
             </Container>
+            <Footer />
         </div>
     );
 }
