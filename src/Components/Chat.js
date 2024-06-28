@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Avatar, Box, Grid, IconButton, InputBase, Paper, Typography, List, ListItem, ListItemAvatar, ListItemText } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import SendIcon from '@mui/icons-material/Send';
+import MicIcon from '@mui/icons-material/Mic';
+import ImageIcon from '@mui/icons-material/Image';
+import VideocamIcon from '@mui/icons-material/Videocam';
+import StopIcon from '@mui/icons-material/Stop';
 import logo from '../Images/logo.png';
 
 const conversations = [
@@ -18,14 +22,52 @@ const messages = [
 const Chat = () => {
     const [currentMessage, setCurrentMessage] = useState('');
     const [messageList, setMessageList] = useState(messages);
+    const [recording, setRecording] = useState(false);
+    const mediaRecorder = useRef(null);
+    const audioChunks = useRef([]);
 
-    const handleSendMessage = () => {
-        if (currentMessage.trim() !== '') {
+    const handleSendMessage = (content, type = 'text') => {
+        if (typeof content === 'string' && content.trim() !== '') {
             setMessageList([
                 ...messageList,
-                { sender: 'Emma Johnson', content: currentMessage, time: 'Just now', avatar: 'https://i.pravatar.cc/302' },
+                { sender: 'Emma Johnson', content, type, time: 'Just now', avatar: 'https://i.pravatar.cc/302' },
             ]);
             setCurrentMessage('');
+        } else if (type !== 'text') {
+            setMessageList([
+                ...messageList,
+                { sender: 'Emma Johnson', content, type, time: 'Just now', avatar: 'https://i.pravatar.cc/302' },
+            ]);
+        }
+    };
+
+    const startRecording = () => {
+        navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+            mediaRecorder.current = new MediaRecorder(stream);
+            mediaRecorder.current.ondataavailable = event => {
+                audioChunks.current.push(event.data);
+            };
+            mediaRecorder.current.onstop = () => {
+                const audioBlob = new Blob(audioChunks.current, { type: 'audio/wav' });
+                audioChunks.current = [];
+                const audioUrl = URL.createObjectURL(audioBlob);
+                handleSendMessage(audioUrl, 'audio');
+            };
+            mediaRecorder.current.start();
+            setRecording(true);
+        });
+    };
+
+    const stopRecording = () => {
+        mediaRecorder.current.stop();
+        setRecording(false);
+    };
+
+    const handleFileUpload = (event, type) => {
+        const file = event.target.files[0];
+        if (file) {
+            const fileUrl = URL.createObjectURL(file);
+            handleSendMessage(fileUrl, type);
         }
     };
 
@@ -62,9 +104,20 @@ const Chat = () => {
                                 )}
                                 <Box sx={{ maxWidth: '60%', marginLeft: message.sender !== 'Emma Johnson' ? 2 : 0 }}>
                                     <Typography variant="body2" color="textSecondary">{message.sender}</Typography>
-                                    <Typography variant="body1" sx={{ background: message.sender === 'Emma Johnson' ? '#2196f3' : '#f1f1f1', color: message.sender === 'Emma Johnson' ? 'white' : 'black', padding: 2, borderRadius: 4 }}>
-                                        {message.content}
-                                    </Typography>
+                                    {message.type === 'text' && (
+                                        <Typography variant="body1" sx={{ background: message.sender === 'Emma Johnson' ? '#2196f3' : '#f1f1f1', color: message.sender === 'Emma Johnson' ? 'white' : 'black', padding: 2, borderRadius: 4 }}>
+                                            {message.content}
+                                        </Typography>
+                                    )}
+                                    {message.type === 'audio' && (
+                                        <audio controls src={message.content} />
+                                    )}
+                                    {message.type === 'image' && (
+                                        <img src={message.content} alt="Uploaded" style={{ maxWidth: '100%', borderRadius: 4 }} />
+                                    )}
+                                    {message.type === 'video' && (
+                                        <video controls src={message.content} style={{ maxWidth: '100%', borderRadius: 4 }} />
+                                    )}
                                     <Typography variant="caption" color="textSecondary">{message.time}</Typography>
                                 </Box>
                                 {message.sender === 'Emma Johnson' && (
@@ -80,10 +133,37 @@ const Chat = () => {
                             placeholder="Type a message"
                             value={currentMessage}
                             onChange={(e) => setCurrentMessage(e.target.value)}
-                            onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+                            onKeyPress={(e) => e.key === 'Enter' && handleSendMessage(currentMessage)}
                         />
-                        <IconButton color="primary" onClick={handleSendMessage}>
+                        <IconButton color="primary" onClick={() => handleSendMessage(currentMessage)}>
                             <SendIcon />
+                        </IconButton>
+                        <input
+                            accept="image/*"
+                            id="upload-photo"
+                            type="file"
+                            style={{ display: 'none' }}
+                            onChange={(e) => handleFileUpload(e, 'image')}
+                        />
+                        <label htmlFor="upload-photo">
+                            <IconButton color="primary" component="span">
+                                <ImageIcon />
+                            </IconButton>
+                        </label>
+                        <input
+                            accept="video/*"
+                            id="upload-video"
+                            type="file"
+                            style={{ display: 'none' }}
+                            onChange={(e) => handleFileUpload(e, 'video')}
+                        />
+                        <label htmlFor="upload-video">
+                            <IconButton color="primary" component="span">
+                                <VideocamIcon />
+                            </IconButton>
+                        </label>
+                        <IconButton color="primary" onClick={recording ? stopRecording : startRecording}>
+                            {recording ? <StopIcon /> : <MicIcon />}
                         </IconButton>
                     </Box>
                 </Box>
