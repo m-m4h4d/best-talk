@@ -10,6 +10,7 @@ import InstructorSearch from './Components/InstructorSearch';
 import InstructorDashboard from './Components/InstructorDashboard';
 import InstructorListing from './Components/InstructorListing';
 import InstructorDetail from './Components/InstructorDetail';
+import Chat from './Components/Chat';
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/instructor-dashboard" element={<InstructorDashboard />} />
                 <Route path="/instructor-listing" element={<InstructorListing />} />
                 <Route path="/instructor-detail" element={<InstructorDetail />} />
+                <Route path="/chat" element={<Chat />} />
             </Routes>
         </Router>
     );
