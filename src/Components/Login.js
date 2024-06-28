@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { Box, Button, Container, TextField, Typography, Link as MuiLink } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Footer from './Footer';
 
 function Login() {
+    const Navigate = new useNavigate();
     const [values, setValues] = React.useState({
         email: '',
         password: '',
@@ -28,6 +29,10 @@ function Login() {
             return;
         }
 
+        if (values.email === "admin@example.com" && values.password === "Bingo.123") {
+            Navigate("/admin-dashboard");
+        }
+
         console.log(JSON.stringify(values, null, 2));
     };
 
@@ -41,9 +46,9 @@ function Login() {
                     <Typography variant="body1" align='center' textAlign='left'>
                         Don't have an account?&nbsp;
                         <MuiLink component={Link} to='/signup'
-                        style={{ textDecoration: 'none', color: 'black' }}>
+                            style={{ textDecoration: 'none', color: 'black' }}>
                             Sign up
-                            </MuiLink>
+                        </MuiLink>
                     </Typography>
                     <form onSubmit={handleSubmit}>
                         <TextField
@@ -82,11 +87,11 @@ function Login() {
                         </Button>
                     </form>
                     <Typography
-                    variant="body2"
-                    align='center'
-                    textAlign='center'
-                    color='#4A789C'
-                    style={{ margin: '0.25rem' }}>
+                        variant="body2"
+                        align='center'
+                        textAlign='center'
+                        color='#4A789C'
+                        style={{ margin: '0.25rem' }}>
                         Forgot Password?
                     </Typography>
                 </Box>

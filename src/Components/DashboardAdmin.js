@@ -1,22 +1,16 @@
 import React from 'react';
 import { Avatar, Box, Grid, List, ListItem, ListItemIcon, ListItemText, Typography, Paper, Button } from '@mui/material';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import PeopleIcon from '@mui/icons-material/People';
-import SchoolIcon from '@mui/icons-material/School';
-import ReportIcon from '@mui/icons-material/Report';
-import SettingsIcon from '@mui/icons-material/Settings';
-import HelpIcon from '@mui/icons-material/Help';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import logo from '../Images/logo.png'; // replace with actual path to your logo
+import { GroupOutlined, Dashboard, People, School, Report, Settings, Help, ImportContactsOutlined, East, Today, MonetizationOnOutlined } from '@mui/icons-material';
+import logo from '../Images/logo.png';
 
 const sidebarItems = [
-    { text: 'Dashboard', icon: <DashboardIcon /> },
-    { text: 'Users', icon: <PeopleIcon /> },
-    { text: 'Tutors', icon: <SchoolIcon /> },
-    { text: 'Courses', icon: <SchoolIcon /> },
-    { text: 'Reports', icon: <ReportIcon /> },
-    { text: 'Settings', icon: <SettingsIcon /> },
-    { text: 'Help', icon: <HelpIcon /> },
+    { text: 'Dashboard', icon: <Dashboard /> },
+    { text: 'Users', icon: <People /> },
+    { text: 'Tutors', icon: <School /> },
+    { text: 'Courses', icon: <ImportContactsOutlined /> },
+    { text: 'Reports', icon: <Report /> },
+    { text: 'Settings', icon: <Settings /> },
+    { text: 'Help', icon: <Help /> },
 ];
 
 const recentActivities = [
@@ -33,10 +27,10 @@ const recentActivities = [
 ];
 
 const statistics = [
-    { label: 'Courses', value: '2,300' },
-    { label: 'Users', value: '12,000' },
-    { label: 'Sessions', value: '16,000' },
-    { label: 'Revenue', value: '$2.3M' },
+    { icon: <ImportContactsOutlined />, label: 'Courses', value: '2,300' },
+    { icon: <GroupOutlined />, label: 'Users', value: '12,000' },
+    { icon: <Today />, label: 'Sessions', value: '16,000' },
+    { icon: <MonetizationOnOutlined />, label: 'Revenue', value: '$2.3M' },
 ];
 
 const DashboardAdmin = () => {
@@ -62,21 +56,16 @@ const DashboardAdmin = () => {
                     <Typography variant="h4" gutterBottom>
                         Welcome back, Admin.
                     </Typography>
+                    <Typography variant="h6" gutterBottom><b>System Health</b></Typography>
                     <Paper sx={{ padding: 2, marginBottom: 3 }}>
-                        <Typography variant="h6" gutterBottom>
-                            System Health
-                        </Typography>
+                        <Typography variant="h7" gutterBottom><b>View System Status</b></Typography>
                         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                             <Typography>All systems operational</Typography>
-                            <Button variant="contained" endIcon={<CheckCircleOutlineIcon />}>
-                                View
-                            </Button>
+                            <Button variant="text" style={{ color: "black" }} endIcon={<East />}><b>View</b></Button>
                         </Box>
                     </Paper>
                     <Box sx={{ marginBottom: 3 }}>
-                        <Typography variant="h6" gutterBottom>
-                            Recent Activity
-                        </Typography>
+                        <Typography variant="h6" gutterBottom><b>Recent Activity</b></Typography>
                         {recentActivities.map((activity, index) => (
                             <Box key={index} sx={{ display: 'flex', alignItems: 'center', marginBottom: 2 }}>
                                 <Avatar src={activity.avatar} sx={{ marginRight: 2 }} />
@@ -89,10 +78,12 @@ const DashboardAdmin = () => {
                             </Box>
                         ))}
                     </Box>
+                    <Typography variant="h6" gutterBottom><b>Statistics</b></Typography>
                     <Grid container spacing={2}>
                         {statistics.map((stat, index) => (
                             <Grid item xs={3} key={index}>
                                 <Paper sx={{ padding: 2, textAlign: 'center' }}>
+                                    {stat.icon}
                                     <Typography variant="h6">{stat.label}</Typography>
                                     <Typography variant="h4">{stat.value}</Typography>
                                 </Paper>
