@@ -56,15 +56,20 @@ const Chat = () => {
                 <Box sx={{ padding: 2, display: 'flex', flexDirection: 'column', height: '100vh' }}>
                     <Box sx={{ flexGrow: 1, overflowY: 'auto' }}>
                         {messageList.map((message, index) => (
-                            <Box key={index} sx={{ display: 'flex', marginBottom: 2 }}>
-                                <Avatar alt={message.sender} src={message.avatar} />
-                                <Box sx={{ marginLeft: 2 }}>
+                            <Box key={index} sx={{ display: 'flex', justifyContent: message.sender === 'Emma Johnson' ? 'flex-end' : 'flex-start', marginBottom: 2 }}>
+                                {message.sender !== 'Emma Johnson' && (
+                                    <Avatar alt={message.sender} src={message.avatar} />
+                                )}
+                                <Box sx={{ maxWidth: '60%', marginLeft: message.sender !== 'Emma Johnson' ? 2 : 0 }}>
                                     <Typography variant="body2" color="textSecondary">{message.sender}</Typography>
-                                    <Typography variant="body1" sx={{ background: '#f1f1f1', padding: 2, borderRadius: 4 }}>
+                                    <Typography variant="body1" sx={{ background: message.sender === 'Emma Johnson' ? '#2196f3' : '#f1f1f1', color: message.sender === 'Emma Johnson' ? 'white' : 'black', padding: 2, borderRadius: 4 }}>
                                         {message.content}
                                     </Typography>
                                     <Typography variant="caption" color="textSecondary">{message.time}</Typography>
                                 </Box>
+                                {message.sender === 'Emma Johnson' && (
+                                    <Avatar alt={message.sender} src={message.avatar} />
+                                )}
                             </Box>
                         ))}
                     </Box>
