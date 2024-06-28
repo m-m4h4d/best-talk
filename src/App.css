@@ -67,6 +67,7 @@
   align-items: center;
   text-align: center;
   padding: 2vh 0 10vh;
+  border-radius: 3%;
 }
 
 .learnBtn {

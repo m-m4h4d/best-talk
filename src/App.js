@@ -7,7 +7,9 @@ import Login from './Components/Login';
 import Question from './Components/Question';
 import Stepper from './Components/Stepper';
 import InstructorSearch from './Components/InstructorSearch';
-import InstructorDashboard from './Components/InstructorDashboard';
+import DashboardInstructor from './Components/DashboardInstructor';
+import DashboardAdmin from './Components/DashboardAdmin';
+import DashboardStudent from './Components/DashboardStudent';
 import InstructorListing from './Components/InstructorListing';
 import InstructorDetail from './Components/InstructorDetail';
 import Chat from './Components/Chat';
@@ -22,7 +24,9 @@ function App() {
                 <Route path="/question" element={<Question />} />
                 <Route path="/stepper" element={<Stepper />} />
                 <Route path="/instructor-search" element={<InstructorSearch />} />
-                <Route path="/instructor-dashboard" element={<InstructorDashboard />} />
+                <Route path="/instructor-dashboard" element={<DashboardInstructor />} />
+                <Route path="/student-dashboard" element={<DashboardStudent />} />
+                <Route path="/admin-dashboard" element={<DashboardAdmin />} />
                 <Route path="/instructor-listing" element={<InstructorListing />} />
                 <Route path="/instructor-detail" element={<InstructorDetail />} />
                 <Route path="/chat" element={<Chat />} />

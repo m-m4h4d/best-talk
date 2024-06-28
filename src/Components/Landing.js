@@ -78,7 +78,7 @@ function Home() {
                             <span className='pink'>Learn</span> anything you want
                             <img src={learn} alt="learn" width={'10%'} style={{ marginLeft: "50px" }} />
                         </Typography>
-                        <Container maxWidth='lg' style={{ background: "#F7F7F7", paddingBottom: "8vh", marginTop: "10vh" }}>
+                        <Container maxWidth='lg' style={{ background: "#F7F7F7", paddingBottom: "8vh", marginTop: "10vh", borderRadius: '2%' }}>
                             <Grid container spacing={4}>
                                 {courses.map((course, index) => (
                                     <Grid item xs={12} sm={6} md={4} lg={2.4} key={index}>

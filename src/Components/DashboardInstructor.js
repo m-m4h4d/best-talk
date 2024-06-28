@@ -10,7 +10,7 @@ import HelpIcon from '@mui/icons-material/Help';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import IconButton from '@mui/material/IconButton';
 
-const InstructorDashboard = () => {
+const DashboardInstructor = () => {
     const menuItems = [
         { text: 'Home', icon: <HomeIcon /> },
         { text: 'Content folder', icon: <FolderIcon /> },
@@ -91,4 +91,4 @@ const InstructorDashboard = () => {
     );
 };
 
-export default InstructorDashboard;
+export default DashboardInstructor;
