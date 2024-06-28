@@ -31,6 +31,9 @@ function Login() {
 
         if (values.email === "admin@example.com" && values.password === "Bingo.123") {
             Navigate("/admin-dashboard");
+        } else {
+            alert("Invalid Email or Password.");
+            return;
         }
 
         console.log(JSON.stringify(values, null, 2));
