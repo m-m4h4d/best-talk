@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Button, Typography, LinearProgress } from '@mui/material';
-import StepFirst from './Steps/StepFirst';
-import StepSecond from './Steps/StepSecond';
-import StepThird from './Steps/StepThird';
-import StepFourth from './Steps/StepFourth';
-import StepFifth from './Steps/StepFifth';
-import StepSixth from './Steps/StepSixth';
-import StepFinal from './Steps/StepFinal';
-import StepLast from './Steps/StepLast';
+import { StepFirst, StepSecond, StepThird, StepFourth, StepFifth, StepSixth, StepFinal, StepLast } from './Steps';
 import { useLocation } from 'react-router-dom';
 
 const steps = [

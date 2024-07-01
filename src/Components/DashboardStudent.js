@@ -1,7 +1,6 @@
 import React from 'react';
 import { Box, Typography, Container, Avatar, Button } from '@mui/material';
-import Python from "../Images/Python.png";
-import Data from "../Images/Data Science.png"
+import { Python, Data } from '../Images';
 
 const lessons = [
     {

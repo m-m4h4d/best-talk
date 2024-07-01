@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, Button, Checkbox, FormControlLabel, Grid, Typography, ToggleButton, ToggleButtonGroup, IconButton } from '@mui/material';
 import { Star, StarBorder, PlayArrow } from '@mui/icons-material';
-import instructorImage from '../Images/instructor.png';
+import { instructorImage } from '../Images';
 
 const countries = ['Turkey', 'America', 'England', 'France', 'Germany', 'Canada', 'Italy', 'Spain'];
 const languages = ['Turkish', 'English', 'German', 'French'];

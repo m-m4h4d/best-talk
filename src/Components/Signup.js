@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box, Button, Container, TextField, Typography, Link as MuiLink } from '@mui/material';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import Footer from './Footer';
+import { Footer } from './';
 
 function Signup() {
     const [values, setValues] = React.useState({

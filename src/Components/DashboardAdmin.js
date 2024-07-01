@@ -1,7 +1,7 @@
 import React from 'react';
 import { Avatar, Box, Grid, List, ListItem, ListItemIcon, ListItemText, Typography, Paper, Button } from '@mui/material';
 import { GroupOutlined, Dashboard, People, School, Report, Settings, Help, ImportContactsOutlined, East, Today, MonetizationOnOutlined } from '@mui/icons-material';
-import logo from '../Images/logo.png';
+import { logo } from '../Images';
 
 const sidebarItems = [
     { text: 'Dashboard', icon: <Dashboard /> },

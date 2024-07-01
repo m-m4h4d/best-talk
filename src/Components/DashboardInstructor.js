@@ -1,5 +1,5 @@
 import React from 'react';
-import i2 from '../Images/i2.png';
+import { i2 } from '../Images';
 import { Grid, Typography, Box, Button, Card, CardContent, CardMedia, CardActions, IconButton, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import { Home, Folder, Schedule, Person, AttachMoney, Help, ChatBubbleOutline } from '@mui/icons-material';
 

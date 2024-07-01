@@ -612,9 +612,7 @@ import {
   CardContent,
   Divider
 } from "@mui/material";
-import ScheduleLessonPopup from "./ScheduleLessonPopup";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import { ScheduleLessonPopup, Navbar, Footer } from "./";
 
 const InstructorDetail = () => {
   const location = useLocation();

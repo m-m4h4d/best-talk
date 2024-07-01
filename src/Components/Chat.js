@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Avatar, Box, Grid, IconButton, InputBase, Paper, Typography, List, ListItem, ListItemAvatar, ListItemText } from '@mui/material';
 import { Search, Send, Mic, Image, Videocam, Stop } from '@mui/icons-material';
-import logo from '../Images/logo.png';
+import { logo } from '../Images';
 
 const conversations = [
     { name: 'Jane Smith', title: 'Software Engineering Manager at Facebook', time: '2h', avatar: 'https://i.pravatar.cc/300' },

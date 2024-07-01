@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { AppBar, Toolbar, IconButton, Button, Grid, Drawer, List, ListItem, ListItemText, Typography, Paper, ClickAwayListener, Slide } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import logo from '../Images/logo.png';
-import Tabs from './Tabs';
+import { logo } from '../Images';
+import { Tabs } from './';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {

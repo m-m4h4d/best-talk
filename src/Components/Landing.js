@@ -1,20 +1,9 @@
 import * as React from 'react';
 import '../App.css';
-import Footer from './Footer';
-import Tabs from './Tabs';
-import Navbar from './Navbar';
+import { Navbar, Tabs, Footer } from './';
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import image from '../Images/image.png';
-import learn from '../Images/learn.png';
-import language from '../Images/language.png';
-import programming from '../Images/programming.png';
-import math from '../Images/math.png';
-import design from '../Images/design.png';
-import a from '../Images/1.png';
-import b from '../Images/2.png';
-import c from '../Images/3.png';
-import d from '../Images/4.png';
+import { language, programming, math, design, image, learn, a, b, c, d } from '../Images';
 import { East } from '@mui/icons-material';
 
 function Home() {

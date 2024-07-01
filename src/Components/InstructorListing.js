@@ -19,8 +19,7 @@ import {
 import MenuIcon from "@mui/icons-material/Menu";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import { Navbar, Footer } from "./";
 
 // const sampleData = [
 //   {
