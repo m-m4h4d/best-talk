@@ -14,6 +14,8 @@ import Tabs from './Tabs';
 import Footer from './Footer';
 import Navbar from './Navbar';
 import ScheduleLessonPopup from './ScheduleLessonPopup';
+import About from './About';
+import Contact from './Contact';
 
 export {
     Chat,
@@ -31,5 +33,7 @@ export {
     Tabs,
     Footer,
     Navbar,
-    ScheduleLessonPopup
+    ScheduleLessonPopup,
+    About,
+    Contact
 };

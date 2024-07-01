@@ -24,7 +24,7 @@ const Navbar = () => {
 
     const menuItems = [
         { text: 'Courses', onClick: () => alert('clicked') },
-        { text: 'About', onClick: () => alert('clicked') },
+        { text: 'About', component: Link, to: '/about'},
         { text: 'Contact', onClick: () => alert('clicked') },
         { text: 'Login', component: Link, to: '/login' },
         { text: 'Sign Up', onClick: handleSignupDrawerToggle, variant: 'contained', color: '#2196D4' }

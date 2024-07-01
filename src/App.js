@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Landing, Chat, Signup, Login, Question, InstructorSearch, DashboardInstructor, DashboardAdmin, DashboardStudent, InstructorListing, InstructorDetail, Stepper } from './Components';
+import { Landing, Chat, Signup, Login, Question, InstructorSearch, DashboardInstructor, DashboardAdmin, DashboardStudent, InstructorListing, InstructorDetail, Stepper, Contact, About } from './Components';
 
 function App() {
     return (
@@ -19,6 +19,8 @@ function App() {
                 <Route path="/instructor-listing" element={<InstructorListing />} />
                 <Route path="/instructor-detail" element={<InstructorDetail />} />
                 <Route path="/chat" element={<Chat />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/about" element={<About />} />
             </Routes>
         </Router>
     );

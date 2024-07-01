@@ -14,5 +14,6 @@ import programming from './programming.png';
 import logo from './logo.png';
 import logo_old from './logo_old.png';
 import Python from './Python.png';
+import Students from './Students.png';
 
-export { a, b, c, d, Data, design, i2, image, instructorImage, language, math, learn, programming, logo, logo_old, Python };
+export { a, b, c, d, Data, design, i2, image, instructorImage, language, math, learn, programming, logo, logo_old, Python, Students };
