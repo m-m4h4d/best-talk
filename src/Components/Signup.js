@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box, Button, Container, TextField, Typography, Link as MuiLink } from '@mui/material';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Footer } from './';
+import { Footer, Navbar } from './';
 
 function Signup() {
     const [values, setValues] = React.useState({
@@ -53,7 +53,8 @@ function Signup() {
 
     return (
         <div style={{ background: '#F7FAFC', width: "100%" }}>
-            <Container style={{ padding: '2rem', paddingBottom: '8.3rem' }} align='center'>
+            <Navbar />
+            <Container align='center'>
                 <Box align='center' width='20rem'>
                     <Typography variant="h4" align='center' textAlign='left'>
                         Sign up

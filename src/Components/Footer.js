@@ -1,7 +1,8 @@
 import React from 'react';
 import { Facebook, Instagram, GitHub, Telegram, YouTube, Twitter } from '@mui/icons-material';
 import { logo } from '../Images';
-import { Grid, Typography, Box } from '@mui/material';
+import { Grid, Typography, Box, Button, Link as MuiLink } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -9,7 +10,9 @@ const Footer = () => {
             <Grid container spacing={6} justifyContent="space-around">
                 <Grid item xs={12} md={3}>
                     <Box display="flex" flexDirection="row" alignItems="center" style={{ marginLeft: '1rem' }}>
-                        <img src={logo} alt='logo' style={{ marginRight: '1rem', width: '40%' }} />
+                        <MuiLink component={Link} to='/'>
+                            <img src={logo} alt='logo' style={{ marginRight: '1rem', width: '70%' }} />
+                        </MuiLink>
                         <Typography variant="body1" align="center" textAlign="left">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         </Typography>
@@ -27,8 +30,28 @@ const Footer = () => {
                 <Grid item xs={12} md={3} style={{ alignItems: 'center', marginLefteft: '5rem' }}>
                     <Typography variant="h6" gutterBottom align="center" textAlign='left'>Company</Typography>
                     <ul style={{ listStyle: 'none', padding: 0, textAlign: 'left' }}>
-                        <li>About Us</li>
-                        <li>Contact Us</li>
+                        <li>
+                            <Button
+                                component={Link}
+                                to='/about'
+                                variant={'text'}
+                                style={{ color: 'white', textTransform: 'none', background: 'none' }}
+                                sx={{ borderRadius: 28 }}
+                            >
+                                About Us
+                            </Button>
+                        </li>
+                        <li>
+                            <Button
+                                component={Link}
+                                to='/contact'
+                                variant={'text'}
+                                style={{ color: 'white', textTransform: 'none', background: 'none' }}
+                                sx={{ borderRadius: 28 }}
+                            >
+                                Contact Us
+                            </Button>
+                        </li>
                     </ul>
                 </Grid>
                 <Grid item xs={12} md={3}>

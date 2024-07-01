@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { AppBar, Toolbar, IconButton, Button, Grid, Drawer, List, ListItem, ListItemText, Typography, Paper, ClickAwayListener, Slide } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Button, Grid, Drawer, List, ListItem, ListItemText, Typography, Paper, ClickAwayListener, Slide, Link as MuiLink } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { logo } from '../Images';
 import { Tabs } from './';
@@ -24,8 +24,8 @@ const Navbar = () => {
 
     const menuItems = [
         { text: 'Courses', onClick: () => alert('clicked') },
-        { text: 'About', component: Link, to: '/about'},
-        { text: 'Contact', onClick: () => alert('clicked') },
+        { text: 'About', component: Link, to: '/about' },
+        { text: 'Contact', component: Link, to: '/contact' },
         { text: 'Login', component: Link, to: '/login' },
         { text: 'Sign Up', onClick: handleSignupDrawerToggle, variant: 'contained', color: '#2196D4' }
     ];
@@ -35,7 +35,9 @@ const Navbar = () => {
             <AppBar position="static" color="transparent" elevation={0}>
                 <Toolbar>
                     <Grid container alignItems="center" justifyContent="space-around">
-                            <img src={logo} alt='logo' style={{ width: '10%' }} />
+                        <MuiLink component={Link} to='/'>
+                            <img src={logo} alt='logo' style={{ width: '25%' }} />
+                        </MuiLink>
                         <Grid item>
                             <Grid container spacing={2} alignItems="center" sx={{ display: { xs: 'none', md: 'flex' } }}>
                                 {menuItems.map((item, index) => (

@@ -102,8 +102,9 @@ const About = () => {
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut ad minim veniam, nostrud exercitation. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.
                             </Typography>
                         </Box>
-
-                        <Box sx={{ maxWidth: 400, flexGrow: 1 }}>
+                    </Box><br /><br /><br />
+                    <Box align="center" style={{ alignItems: 'center', padding: '4rem 0' }}>
+                        <Box align="center" sx={{ maxWidth: 400, flexGrow: 1 }}>
                             <AutoPlaySwipeableViews
                                 axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                                 index={activeStep}
@@ -159,7 +160,7 @@ const About = () => {
                                 }
                             />
                         </Box>
-                    </Box><br /><br /><br />
+                    </Box>
                     <Typography variant="h4" align="center" gutterBottom>
                         About Us
                     </Typography><br />

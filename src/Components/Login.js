@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Box, Button, Container, TextField, Typography, Link as MuiLink } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
-import { Footer } from './';
+import { Footer, Navbar } from './';
 
 function Login() {
     const Navigate = new useNavigate();
@@ -41,7 +41,8 @@ function Login() {
 
     return (
         <div style={{ background: '#F7FAFC' }}>
-            <Container style={{ padding: '2rem', paddingBottom: "21.5rem" }} align='center'>
+            <Navbar />
+            <Container style={{ padding: '2rem', paddingBottom: '8.4rem' }} align='center'>
                 <Box align='center' width='20rem'>
                     <Typography variant="h4" align='center' textAlign='left'>
                         Log in
