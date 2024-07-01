@@ -1,22 +1,15 @@
 import React from 'react';
 import i2 from '../Images/i2.png';
-import { Grid, Typography, Box, Button, Card, CardContent, CardMedia, CardActions, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import HomeIcon from '@mui/icons-material/Home';
-import FolderIcon from '@mui/icons-material/Folder';
-import ScheduleIcon from '@mui/icons-material/Schedule';
-import PersonIcon from '@mui/icons-material/Person';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-import HelpIcon from '@mui/icons-material/Help';
-import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
-import IconButton from '@mui/material/IconButton';
+import { Grid, Typography, Box, Button, Card, CardContent, CardMedia, CardActions, IconButton, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Home, Folder, Schedule, Person, AttachMoney, Help, ChatBubbleOutline } from '@mui/icons-material';
 
 const DashboardInstructor = () => {
     const menuItems = [
-        { text: 'Home', icon: <HomeIcon /> },
-        { text: 'Content folder', icon: <FolderIcon /> },
-        { text: 'Schedule', icon: <ScheduleIcon /> },
-        { text: 'Profile', icon: <PersonIcon /> },
-        { text: 'Earnings', icon: <AttachMoneyIcon /> },
+        { text: 'Home', icon: <Home /> },
+        { text: 'Content folder', icon: <Folder /> },
+        { text: 'Schedule', icon: <Schedule /> },
+        { text: 'Profile', icon: <Person /> },
+        { text: 'Earnings', icon: <AttachMoney /> },
     ];
 
     const sessions = [
@@ -39,7 +32,7 @@ const DashboardInstructor = () => {
                 <Button variant="contained" color="primary" fullWidth sx={{ mt: 2 }}>
                     Create Course
                 </Button>
-                <Button startIcon={<HelpIcon />} sx={{ mt: 2 }}>
+                <Button startIcon={<Help />} sx={{ mt: 2 }}>
                     Help and Docs
                 </Button>
             </Box>
@@ -70,7 +63,7 @@ const DashboardInstructor = () => {
                                 </Box>
                                 <CardActions>
                                     <IconButton>
-                                        <ChatBubbleOutlineIcon />
+                                        <ChatBubbleOutline />
                                     </IconButton>
                                 </CardActions>
                                 <Box sx={{ paddingRight: '10px' }}>

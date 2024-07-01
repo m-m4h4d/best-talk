@@ -1,11 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Avatar, Box, Grid, IconButton, InputBase, Paper, Typography, List, ListItem, ListItemAvatar, ListItemText } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
-import SendIcon from '@mui/icons-material/Send';
-import MicIcon from '@mui/icons-material/Mic';
-import ImageIcon from '@mui/icons-material/Image';
-import VideocamIcon from '@mui/icons-material/Videocam';
-import StopIcon from '@mui/icons-material/Stop';
+import { Search, Send, Mic, Image, Videocam, Stop } from '@mui/icons-material';
 import logo from '../Images/logo.png';
 
 const conversations = [
@@ -79,7 +74,7 @@ const Chat = () => {
                     <Paper sx={{ padding: '2px 4px', display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
                         <InputBase sx={{ ml: 1, flex: 1 }} placeholder="Search Conversations" />
                         <IconButton type="submit" sx={{ p: '10px' }} aria-label="search">
-                            <SearchIcon />
+                            <Search />
                         </IconButton>
                     </Paper>
                     <List>
@@ -136,7 +131,7 @@ const Chat = () => {
                             onKeyPress={(e) => e.key === 'Enter' && handleSendMessage(currentMessage)}
                         />
                         <IconButton color="primary" onClick={() => handleSendMessage(currentMessage)}>
-                            <SendIcon />
+                            <Send />
                         </IconButton>
                         <input
                             accept="image/*"
@@ -147,7 +142,7 @@ const Chat = () => {
                         />
                         <label htmlFor="upload-photo">
                             <IconButton color="primary" component="span">
-                                <ImageIcon />
+                                <Image />
                             </IconButton>
                         </label>
                         <input
@@ -159,11 +154,11 @@ const Chat = () => {
                         />
                         <label htmlFor="upload-video">
                             <IconButton color="primary" component="span">
-                                <VideocamIcon />
+                                <Videocam />
                             </IconButton>
                         </label>
                         <IconButton color="primary" onClick={recording ? stopRecording : startRecording}>
-                            {recording ? <StopIcon /> : <MicIcon />}
+                            {recording ? <Stop /> : <Mic />}
                         </IconButton>
                     </Box>
                 </Box>
