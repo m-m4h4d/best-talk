@@ -45,7 +45,7 @@ const DashboardInstructor = () => {
                 </Typography>
                 <Grid container spacing={2}>
                     {sessions.map((session, index) => (
-                        <Grid item xs={12} key={index}>
+                        <Grid key={index} size={{ xs: 12 }}>
                             <Card sx={{ display: 'flex', alignItems: 'center' }}>
                                 <CardMedia
                                     component="img"

@@ -45,9 +45,7 @@ const Tabs = ({ size = 'md' }) => {
     };
 
     return (
-        <Grid container spacing={2}
-            justifyContent={currentStyles.justify.justifyContent}
-            alignItems='center'>
+        <Grid container spacing={2} justifyContent={currentStyles.justify.justifyContent} alignItems='center'>
             <div className='tab'
                 style={{
                     width: currentStyles.tab.width,

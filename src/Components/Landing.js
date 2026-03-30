@@ -33,7 +33,7 @@ function Home() {
                 <div className='landing'>
                     <Container style={{ marginTop: '2rem' }}>
                         <Grid container spacing={2} alignItems="center" justifyContent="space-around">
-                            <Grid item xs={12} md={6}>
+                            <Grid size={{ xs: 12, md: 6 }}>
                                 <Typography variant="h2">
                                     <span className='pink'>Empower</span> your<br />
                                     learning journey<br />with the
@@ -54,7 +54,7 @@ function Home() {
                                     Go with your tutor
                                 </Button>
                             </Grid>
-                            <Grid item xs={12} md={6}>
+                            <Grid size={{ xs: 12, md: 6 }}>
                                 <img src={image} alt='landing' style={{ width: '100%', borderRadius: '30px' }} />
                             </Grid>
                         </Grid>
@@ -70,7 +70,7 @@ function Home() {
                         <Container maxWidth='lg' style={{ background: "#F7F7F7", paddingBottom: "8vh", marginTop: "10vh", borderRadius: '2%' }}>
                             <Grid container spacing={4}>
                                 {courses.map((course, index) => (
-                                    <Grid item xs={12} sm={6} md={4} lg={2.4} key={index}>
+                                    <Grid key={index} size={{ xs: 12, sm: 6, md: 4, lg: 2.4 }}>
                                         <Box className='learnBtn' textAlign="center" alignItems="center" justifyContent="center" style={{ overflow: 'hidden' }}>
                                             <Box style={{ background: '#F1F2F6', borderRadius: '12px 12px 0 0' }}>
                                                 <img src={course.image} alt={course.label} width={'50%'} />
@@ -94,7 +94,7 @@ function Home() {
                                 { img: b, title: "Online Courses" },
                                 { img: c, title: "Certification" },
                                 { img: d, title: "1-to-1 learning" }].map((item, index) => (
-                                    <Grid item xs={12} md={6} key={index}>
+                                    <Grid key={index} size={{ xs: 12, md: 6 }}>
                                         <div className='card'>
                                             <img src={item.img} alt={`card-${index}`} style={{ borderRadius: '10px 0 0 10px' }} />
                                             <span>
@@ -123,7 +123,7 @@ function Home() {
                             independent of the number<br />of lessons he or she would like to receive.
                         </Typography>
                         <Grid container justifyContent="center">
-                            <Grid item>
+                            <Grid>
                                 <Button
                                     onClick={() => handleNavigation('Learner')}
                                     variant="contained"
@@ -142,7 +142,7 @@ function Home() {
                 <div className='boost'>
                     <Container className='overlay' background="#ffffff">
                         <Grid container>
-                            <Grid item xs={12}>
+                            <Grid size={{ xs: 12 }}>
                                 <Typography variant="h2" align="center">
                                     Want to <span className='pink'>boost</span> your
                                     <span className='blue'> tutoring</span> career?
@@ -153,7 +153,7 @@ function Home() {
                                     tutoring vacancies just sitting at your home.
                                 </Typography>
                                 <Grid container justifyContent="center">
-                                    <Grid item>
+                                    <Grid>
                                         <Button
                                             onClick={() => handleNavigation('Teacher')}
                                             variant="contained"

@@ -350,7 +350,7 @@ const ScheduleLessonPopup = ({
             {step === 2 && (
               <>
                 <Grid container spacing={2}>
-                  <Grid item xs={12} md={6}>
+                  <Grid size={{ xs: 12, md: 6 }}>
                     <Card sx={{ p: 2 }}>
                       <Box display="flex" alignItems="center" mb={2}>
                         <Avatar
@@ -452,7 +452,7 @@ const ScheduleLessonPopup = ({
                       )}
                     </Card>
                   </Grid>
-                  <Grid item xs={12} md={6}>
+                  <Grid size={{ xs: 12, md: 6 }}>
                     <Typography variant="h6" gutterBottom>
                       Pay with
                     </Typography>

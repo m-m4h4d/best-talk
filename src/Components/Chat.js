@@ -68,7 +68,7 @@ const Chat = () => {
 
     return (
         <Grid container>
-            <Grid item xs={3} sx={{ borderRight: '1px solid #e0e0e0' }}>
+            <Grid sx={{ borderRight: '1px solid #e0e0e0' }} size={{ xs: 12, md: 3 }}>
                 <Box sx={{ padding: 2 }}>
                     <img src={logo} alt="Logo" style={{ height: '50px', marginBottom: '20px' }} />
                     <Paper sx={{ padding: '2px 4px', display: 'flex', alignItems: 'center', marginBottom: '20px' }}>
@@ -89,7 +89,7 @@ const Chat = () => {
                     </List>
                 </Box>
             </Grid>
-            <Grid item xs={9}>
+            <Grid size={{ xs: 12, md: 9 }}>
                 <Box sx={{ padding: 2, display: 'flex', flexDirection: 'column', height: '100vh' }}>
                     <Box sx={{ flexGrow: 1, overflowY: 'auto' }}>
                         {messageList.map((message, index) => (

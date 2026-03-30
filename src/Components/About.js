@@ -170,7 +170,7 @@ const About = () => {
                     </Typography><br /><br />
                     <Grid container spacing={2}>
                         {statistics.map((stat, index) => (
-                            <Grid item xs={3} key={index}>
+                            <Grid key={index} size={{ xs: 12, sm: 6, md: 3 }}>
                                 <Paper sx={{ padding: 2, textAlign: 'center' }}>
                                     <Typography variant="h2"><b>{stat.value}</b></Typography>
                                     <Typography variant="h6">{stat.label}</Typography><br />

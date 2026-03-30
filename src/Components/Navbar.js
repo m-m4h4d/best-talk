@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { AppBar, Toolbar, IconButton, Button, Grid, Drawer, List, ListItem, ListItemText, Typography, Paper, ClickAwayListener, Slide, Link as MuiLink } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Button, Grid, Drawer, List, ListItem, ListItemText, Typography, Paper, ClickAwayListener, Slide, Link as MuiLink, Container } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { logo } from '../Images';
 import { Tabs } from './';
@@ -34,33 +34,35 @@ const Navbar = () => {
         <nav style={{ background: "radial-gradient(75.49% 265.37% at 24.51% 40.67%, #F6FBFD 0%, #E9F4FB 100%)", paddingTop: '0.4rem' }}>
             <AppBar position="static" color="transparent" elevation={0}>
                 <Toolbar>
-                    <Grid container alignItems="center" justifyContent="space-around">
-                        <MuiLink component={Link} to='/'>
-                            <img src={logo} alt='logo' style={{ width: '25%' }} />
-                        </MuiLink>
-                        <Grid item>
-                            <Grid container spacing={2} alignItems="center" sx={{ display: { xs: 'none', md: 'flex' } }}>
-                                {menuItems.map((item, index) => (
-                                    <Grid item key={index}>
-                                        <Button
-                                            onClick={item.onClick}
-                                            component={item.component ? item.component : 'button'}
-                                            to={item.to}
-                                            variant={item.variant ? item.variant : 'text'}
-                                            style={{ color: item.variant ? 'white' : 'black', textTransform: 'none', background: item.variant ? item.color : 'none' }}
-                                            sx={{ borderRadius: 28 }}
-                                            ref={item.text === 'Sign Up' ? signupButtonRef : null}
-                                        >
-                                            {item.text}
-                                        </Button>
-                                    </Grid>
-                                ))}
+                    <Container maxWidth="lg">
+                        <Grid container alignItems="center" justifyContent="space-between">
+                            <MuiLink component={Link} to='/'>
+                                <img src={logo} alt='logo' style={{ height: '120px' }} />
+                            </MuiLink>
+                            <Grid>
+                                <Grid container spacing={2} alignItems="center" sx={{ display: { xs: 'none', md: 'flex' } }} size={{ xs: true, md: true }}>
+                                    {menuItems.map((item, index) => (
+                                        <Grid key={index}>
+                                            <Button
+                                                onClick={item.onClick}
+                                                component={item.component ? item.component : 'button'}
+                                                to={item.to}
+                                                variant={item.variant ? item.variant : 'text'}
+                                                style={{ color: item.variant ? 'white' : 'black', textTransform: 'none', background: item.variant ? item.color : 'none' }}
+                                                sx={{ borderRadius: 28 }}
+                                                ref={item.text === 'Sign Up' ? signupButtonRef : null}
+                                            >
+                                                {item.text}
+                                            </Button>
+                                        </Grid>
+                                    ))}
+                                </Grid>
+                                <IconButton edge="end" color="inherit" aria-label="menu" sx={{ display: { xs: 'flex', md: 'none' } }} onClick={handleDrawerToggle}>
+                                    <MenuIcon />
+                                </IconButton>
                             </Grid>
-                            <IconButton edge="end" color="inherit" aria-label="menu" sx={{ display: { xs: 'flex', md: 'none' } }} onClick={handleDrawerToggle}>
-                                <MenuIcon />
-                            </IconButton>
                         </Grid>
-                    </Grid>
+                    </Container>
                 </Toolbar>
                 <Drawer anchor='right' open={drawerOpen} onClose={handleDrawerToggle}>
                     <List>

@@ -760,7 +760,7 @@ const Results = ({ results }) => {
   return (
     <Grid container spacing={2}>
       {results.map((result, index) => (
-        <Grid item xs={12} key={index}>
+        <Grid key={index} size={{ xs: 12 }}>
           <Box
             display="flex"
             alignItems="center"
@@ -912,12 +912,12 @@ const InstructorListing = () => {
     <Navbar />
       <Box p={2}>
         <Grid container spacing={2}>
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12 }}>
             <SearchBar setSearchQuery={setSearchQuery} />
           </Grid>
           {isSmallScreen ? (
             <>
-              <Grid item xs={12}>
+              <Grid size={{ xs: 12 }}>
                 <IconButton onClick={toggleDrawer(true)}>
                   <MenuIcon />
                 </IconButton>
@@ -938,11 +938,11 @@ const InstructorListing = () => {
               </Grid>
             </>
           ) : (
-            <Grid item xs={2}>
+            <Grid size={{ xs: 2 }}>
               <AdvancedSearch filters={filters} setFilters={setFilters} />
             </Grid>
           )}
-          <Grid item xs={isSmallScreen ? 12 : 10}>
+          <Grid size={{ xs: isSmallScreen ? 12 : 10 }}>
             <Results results={results} />
           </Grid>
         </Grid>

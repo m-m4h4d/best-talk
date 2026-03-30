@@ -36,7 +36,7 @@ const statistics = [
 const DashboardAdmin = () => {
     return (
         <Grid container>
-            <Grid item xs={2} sx={{ borderRight: '1px solid #e0e0e0' }}>
+            <Grid sx={{ borderRight: '1px solid #e0e0e0' }} size={{ xs: 2 }}>
                 <Box sx={{ padding: 2, height: '100vh' }}>
                     <Box sx={{ display: 'flex', justifyContent: 'center', mb: 4 }}>
                         <Avatar src={logo} alt="Logo" sx={{ width: 100, height: 100 }} />
@@ -51,7 +51,7 @@ const DashboardAdmin = () => {
                     </List>
                 </Box>
             </Grid>
-            <Grid item xs={10}>
+            <Grid size={{ xs: 10 }}>
                 <Box sx={{ padding: 3 }}>
                     <Typography variant="h4" gutterBottom>
                         Welcome back, Admin.
@@ -81,7 +81,7 @@ const DashboardAdmin = () => {
                     <Typography variant="h6" gutterBottom><b>Statistics</b></Typography>
                     <Grid container spacing={2}>
                         {statistics.map((stat, index) => (
-                            <Grid item xs={3} key={index}>
+                            <Grid key={index} size={{ xs: 3 }}>
                                 <Paper sx={{ padding: 2, textAlign: 'center' }}>
                                     {stat.icon}
                                     <Typography variant="h6">{stat.label}</Typography>

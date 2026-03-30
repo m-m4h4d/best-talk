@@ -32,7 +32,7 @@ const InstructorSearch = () => {
     return (
         <Grid container spacing={2}>
             {/* Filter Section */}
-            <Grid item xs={3}>
+            <Grid size={{ xs: 3 }}>
                 <Box p={2} bgcolor="white" borderRadius={2} boxShadow={1}>
                     <Typography variant="h6">Filters</Typography>
 
@@ -150,7 +150,7 @@ const InstructorSearch = () => {
             </Grid>
 
             {/* Instructors Section */}
-            <Grid item xs={9}>
+            <Grid size={{ xs: 9 }}>
                 <Box p={2}>
                     <Typography variant="h6">Find an Instructor</Typography>
                     <Button variant="outlined" color="primary" sx={{ mb: 2 }}>

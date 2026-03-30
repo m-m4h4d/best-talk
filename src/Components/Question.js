@@ -51,7 +51,7 @@ const Question = () => {
                     </Typography>
                     <Grid container spacing={2} sx={{ marginTop: '1rem' }}>
                         {goals.map((goal, index) => (
-                            <Grid item xs={12} sm={12} md={12} lg={12} key={index}>
+                            <Grid key={index} size={{ xs: 12, sm: 12, md: 12, lg: 12 }}>
                                 <Box
                                     onClick={() => handleGoalClick(index)}
                                     style={{
