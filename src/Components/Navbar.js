@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { AppBar, Toolbar, IconButton, Button, Grid, Drawer, List, ListItem, ListItemText, Typography, Paper, ClickAwayListener, Slide, Link as MuiLink, Container } from '@mui/material';
+import React, { useState } from 'react';
+import { AppBar, Toolbar, IconButton, Button, Grid, Drawer, List, ListItem, ListItemText, Typography, Popover, Link as MuiLink, Container } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { logo } from '../Images';
 import { Tabs } from './';
@@ -7,27 +7,28 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
-    const [signupDrawerOpen, setSignupDrawerOpen] = useState(false);
-    const signupButtonRef = useRef(null);
+    const [signupAnchorEl, setSignupAnchorEl] = useState(null);
 
     const handleDrawerToggle = () => {
         setDrawerOpen(!drawerOpen);
     };
 
-    const handleSignupDrawerToggle = () => {
-        setSignupDrawerOpen(!signupDrawerOpen);
+    const handleSignupToggle = (event) => {
+        setSignupAnchorEl(signupAnchorEl ? null : event.currentTarget);
     };
 
-    const handleClose = () => {
-        setSignupDrawerOpen(false);
+    const handleSignupClose = () => {
+        setSignupAnchorEl(null);
     };
+
+    const signupOpen = Boolean(signupAnchorEl);
 
     const menuItems = [
         { text: 'Courses', onClick: () => alert('clicked') },
         { text: 'About', component: Link, to: '/about' },
         { text: 'Contact', component: Link, to: '/contact' },
         { text: 'Login', component: Link, to: '/login' },
-        { text: 'Sign Up', onClick: handleSignupDrawerToggle, variant: 'contained', color: '#2196D4' }
+        { text: 'Sign Up', onClick: handleSignupToggle, variant: 'contained', color: '#2196D4' }
     ];
 
     return (
@@ -50,7 +51,6 @@ const Navbar = () => {
                                                 variant={item.variant ? item.variant : 'text'}
                                                 style={{ color: item.variant ? 'white' : 'black', textTransform: 'none', background: item.variant ? item.color : 'none' }}
                                                 sx={{ borderRadius: 28 }}
-                                                ref={item.text === 'Sign Up' ? signupButtonRef : null}
                                             >
                                                 {item.text}
                                             </Button>
@@ -78,30 +78,35 @@ const Navbar = () => {
                     </List>
                 </Drawer>
             </AppBar>
-            {signupDrawerOpen && (
-                <ClickAwayListener onClickAway={handleClose}>
-                    <Slide direction="down" in={signupDrawerOpen} mountOnEnter unmountOnExit>
-                        <Paper
-                            elevation={3}
-                            sx={{
-                                position: 'absolute',
-                                top: signupButtonRef.current ? signupButtonRef.current.getBoundingClientRect().bottom + window.scrollY + 10 : '10px',
-                                left: signupButtonRef.current.getBoundingClientRect().left - 140,
-                                width: '24rem',
-                                height: '2.5rem',
-                                paddingTop: '1.5rem',
-                                borderRadius: '1rem',
-                                background: '#E9F4FB',
-                                zIndex: 1300,
-                                alignItems: 'center',
-                                justifyContent: 'center'
-                            }}
-                        >
-                            <Tabs size="sm" />
-                        </Paper>
-                    </Slide>
-                </ClickAwayListener>
-            )}
+            <Popover
+                open={signupOpen}
+                anchorEl={signupAnchorEl}
+                onClose={handleSignupClose}
+                anchorOrigin={{
+                    vertical: 'bottom',
+                    horizontal: 'center',
+                }}
+                transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                }}
+                PaperProps={{
+                    sx: {
+                        mt: 1,
+                        width: { xs: '90vw', sm: '24rem' },
+                        maxWidth: '24rem',
+                        p: { xs: 1, sm: 2 },
+                        borderRadius: '1rem',
+                        background: '#E9F4FB',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        overflowX: 'hidden'
+                    }
+                }}
+            >
+                <Tabs size="sm" />
+            </Popover>
         </nav>
     );
 };
