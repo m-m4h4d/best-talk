@@ -22,7 +22,7 @@ const InstructorDetail = () => {
 
   const handleOpenPopup = () => {
     if (Object.keys(instructor).length === 0) {
-      navigate("/instructor-listing"); // Redirect to the main page if instructor data is not available
+      navigate("/instructor-listing");
     } else {
       setPopupOpen(true);
     }

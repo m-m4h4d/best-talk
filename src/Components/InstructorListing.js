@@ -21,55 +21,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 import { Navbar, Footer } from "./";
 
-// const sampleData = [
-//   {
-//     name: "Eve",
-//     age: 35,
-//     gender: "Female",
-//     country: "Turkey",
-//     languages: ["Turkish", "English"],
-//     isNative: true,
-//     isSuperTeacher: false,
-//     rating: 4.5,
-//     expertise: ["Everyday English", "Business English"],
-//     price: 50,
-//     availableHours: ["09:00-12:00", "13:00-15:00"],
-//     availableDays: ["Monday", "Tuesday"],
-//     bio: "Eve is an experienced English teacher with a passion for helping students improve their language skills. She has a friendly and patient teaching style and is dedicated to making the learning process enjoyable and effective. In her free time, she enjoys reading, hiking, and trying new foods.",
-//     students: 3,
-//     courses: 8,
-//     skills: [
-//       "Python",
-//       "JavaScript",
-//       "React",
-//       "Node.js",
-//       "Express",
-//       "SQL",
-//       "MongoDB",
-//     ],
-//     experience: "Software Engineer, Company A, Jan 2020 - Present",
-//     videoUrl:
-//       "https://file-examples.com/storage/fed5266c9966708dcaeaea6/2017/04/file_example_MP4_480_1_5MG.mp4",
-//     reviews: [
-//       {
-//         name: "Lucas Smith",
-//         date: "Jan 1, 2023",
-//         rating: 5,
-//         comment:
-//           "Maria is a fantastic teacher. She explains complex concepts in a way that's easy to understand. Her coding examples are clear and well-documented. I highly recommend her for anyone looking to improve their programming skills.",
-//       },
-//       {
-//         name: "Emma Johnson",
-//         date: "Dec 20, 2022",
-//         rating: 5,
-//         comment:
-//           "Maria is an excellent instructor. She's knowledgeable about a wide range of topics and provides detailed explanations. She's also patient and supportive, which makes the learning process enjoyable. I've learned a lot from her and would definitely take more courses in the future.",
-//       },
-//     ],
-//   },
-//   // Add more sample data here
-// ];
-
 const sampleData = [
   {
     name: "Eve",
@@ -895,6 +846,7 @@ const InstructorListing = () => {
 
   useEffect(() => {
     filterResults();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery, filters]);
 
   const toggleDrawer = (open) => (event) => {
@@ -909,7 +861,7 @@ const InstructorListing = () => {
 
   return (
     <ThemeProvider theme={theme}>
-    <Navbar />
+      <Navbar />
       <Box p={2}>
         <Grid container spacing={2}>
           <Grid size={{ xs: 12 }}>

@@ -143,7 +143,6 @@ const ScheduleLessonPopup = ({
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [tabValue, setTabValue] = useState(0);
   const [promoCode, setPromoCode] = useState("");
-  const [promoApplied, setPromoApplied] = useState(false);
   const [showPromoCodeField, setShowPromoCodeField] = useState(false);
   const [availableSlots, setAvailableSlots] = useState(
     getAvailableSlots(25, availableHours)
@@ -187,8 +186,7 @@ const ScheduleLessonPopup = ({
   };
 
   const handleRedeem = () => {
-    // Handle promo code redemption logic
-    setPromoApplied(true);
+    alert("Promo applied successfully!");
   };
 
   const handlePaymentSuccess = () => {
